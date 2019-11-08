@@ -10,6 +10,7 @@ import Cocoa
 
 class ViewController: NSViewController {
     @IBOutlet weak var timerLabel: NSTextFieldCell!
+    @IBOutlet weak var startPauzeButton: NSButton!
     
     var duration = 0
     var timer = Timer()
@@ -17,12 +18,13 @@ class ViewController: NSViewController {
     
     @IBAction func startTimer(_ sender: Any) {
         if(self.isTimerOn == false) {
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {[weak self] (_) in
-                guard let strongSelf = self else {return}
-                strongSelf.duration += 1
-                strongSelf.timerLabel.title = String(strongSelf.duration)
-            })
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer(timer:))
             self.isTimerOn = true
+            self.startPauzeButton.title = "Pauze"
+        } else {
+            self.timer.invalidate()
+            self.isTimerOn = false
+            self.startPauzeButton.title = "Start"
         }
     }
     
@@ -35,6 +37,11 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.timerLabel.title = String(self.duration)
+    }
+    
+    func updateTimer(timer: Timer) {
+        self.duration += 1
         self.timerLabel.title = String(self.duration)
     }
 

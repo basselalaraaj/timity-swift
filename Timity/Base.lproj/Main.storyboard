@@ -722,6 +722,7 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="startPauzeButton" destination="ga1-JS-duE" id="epx-IZ-htb"/>
                         <outlet property="timerLabel" destination="8im-Eh-qFZ" id="hk7-Cf-egT"/>
                     </connections>
                 </viewController>
