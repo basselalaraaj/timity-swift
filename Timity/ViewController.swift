@@ -12,37 +12,45 @@ class ViewController: NSViewController {
     @IBOutlet weak var timerLabel: NSTextFieldCell!
     @IBOutlet weak var startPauzeButton: NSButton!
     
-    var duration = 0
-    var timer = Timer()
-    var isTimerOn = false
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.timerLabel.title = String(timerModel!.duration)
+        continueTimer()
+    }
     
     @IBAction func startTimer(_ sender: Any) {
-        if(self.isTimerOn == false) {
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer(timer:))
-            self.isTimerOn = true
+        if(timerModel?.isTimerOn == false) {
+            timerModel?.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer(timer:))
+            timerModel?.isTimerOn = true
             self.startPauzeButton.title = "Pauze"
         } else {
-            self.timer.invalidate()
-            self.isTimerOn = false
+            pauzeTimer()
             self.startPauzeButton.title = "Start"
         }
     }
     
     @IBAction func stopTimer(_ sender: Any) {
-        self.timer.invalidate()
-        self.duration = 0
-        self.isTimerOn = false
-        self.timerLabel.title = String(self.duration)
+        pauzeTimer()
+        timerModel?.duration = 0
+        self.timerLabel.title = String(timerModel!.duration)
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.timerLabel.title = String(self.duration)
+    
+    func pauzeTimer() {
+        timerModel?.timer.invalidate()
+        timerModel?.isTimerOn = false
+    }
+    
+    func continueTimer() {
+        if(timerModel?.isTimerOn == true) {
+            timerModel?.timer.invalidate()
+            timerModel?.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer(timer:))
+            self.startPauzeButton.title = "Pauze"
+        }
     }
     
     func updateTimer(timer: Timer) {
-        self.duration += 1
-        self.timerLabel.title = String(self.duration)
+        timerModel?.duration += 1
+        self.timerLabel.title = String(timerModel!.duration)
     }
 
     override var representedObject: Any? {

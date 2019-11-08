@@ -11,6 +11,7 @@
 		FCA3F24D2375D022008F8DE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA3F24C2375D022008F8DE0 /* ViewController.swift */; };
 		FCA3F24F2375D024008F8DE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA3F24E2375D024008F8DE0 /* Assets.xcassets */; };
 		FCA3F2522375D024008F8DE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA3F2502375D024008F8DE0 /* Main.storyboard */; };
+		FCB11A8123761D1100DE51DE /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB11A8023761D1100DE51DE /* TimerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		FCA3F2512375D024008F8DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCA3F2532375D024008F8DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCA3F2542375D024008F8DE0 /* Timity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Timity.entitlements; sourceTree = "<group>"; };
+		FCB11A8023761D1100DE51DE /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				FCA3F24A2375D022008F8DE0 /* AppDelegate.swift */,
 				FCA3F24C2375D022008F8DE0 /* ViewController.swift */,
+				FCB11A8023761D1100DE51DE /* TimerModel.swift */,
 				FCA3F24E2375D024008F8DE0 /* Assets.xcassets */,
 				FCA3F2502375D024008F8DE0 /* Main.storyboard */,
 				FCA3F2532375D024008F8DE0 /* Info.plist */,
@@ -133,6 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCB11A8123761D1100DE51DE /* TimerModel.swift in Sources */,
 				FCA3F24D2375D022008F8DE0 /* ViewController.swift in Sources */,
 				FCA3F24B2375D022008F8DE0 /* AppDelegate.swift in Sources */,
 			);
