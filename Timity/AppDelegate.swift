@@ -13,7 +13,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        statusItem.button?.title = "Timity"
+        let icon = NSImage(named: "statusIcon")
+        icon?.isTemplate = true
+        statusItem.button?.image = icon
         statusItem.button?.target = self
         statusItem.button?.action = #selector(showSettings)
     }
