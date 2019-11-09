@@ -11,6 +11,7 @@ import Cocoa
 class ViewController: NSViewController {
     @IBOutlet weak var timerLabel: NSTextFieldCell!
     @IBOutlet weak var startPauzeButton: NSButton!
+    let appDelegate = NSApp.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ class ViewController: NSViewController {
         pauzeTimer()
         timerModel?.duration = 0
         self.timerLabel.title = String(timerModel!.duration)
+        appDelegate.statusItem.button?.title = String(timerModel!.duration)
     }
     
     func pauzeTimer() {
@@ -51,6 +53,7 @@ class ViewController: NSViewController {
     func updateTimer(timer: Timer) {
         timerModel?.duration += 1
         self.timerLabel.title = String(timerModel!.duration)
+        appDelegate.statusItem.button?.title = String(timerModel!.duration)
     }
 
     override var representedObject: Any? {
