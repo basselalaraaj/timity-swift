@@ -20,7 +20,7 @@ class TimerModel {
     
     func getTime()-> String {
         let (h, m, s) = secondsToHoursMinutesSeconds(seconds:duration)
-        return String(format: "%02d:%02d:%02d", h, m, s)
+        return String(format: "%02d:%02d", h, m)
     }
     
     func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
