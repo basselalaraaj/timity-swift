@@ -9,51 +9,30 @@
 import Cocoa
 
 class ViewController: NSViewController {
-    @IBOutlet weak var timerLabel: NSTextFieldCell!
     @IBOutlet weak var startPauzeButton: NSButton!
-    let appDelegate = NSApp.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.timerLabel.title = String(timerModel!.duration)
-        continueTimer()
+        timerModel?.continueTimer()
+        if(timerModel?.isTimerOn == true) {
+            self.startPauzeButton.title = "Pauze"
+        } else {
+            self.startPauzeButton.title = "Start"
+        }
     }
     
     @IBAction func startTimer(_ sender: Any) {
         if(timerModel?.isTimerOn == false) {
-            timerModel?.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer(timer:))
-            timerModel?.isTimerOn = true
+            timerModel?.startTimer()
             self.startPauzeButton.title = "Pauze"
         } else {
-            pauzeTimer()
+            timerModel?.pauzeTimer()
             self.startPauzeButton.title = "Start"
         }
     }
     
     @IBAction func stopTimer(_ sender: Any) {
-        pauzeTimer()
-        timerModel?.duration = 0
-        self.timerLabel.title = String(timerModel!.duration)
-        appDelegate.statusItem.button?.title = String(timerModel!.duration)
-    }
-    
-    func pauzeTimer() {
-        timerModel?.timer.invalidate()
-        timerModel?.isTimerOn = false
-    }
-    
-    func continueTimer() {
-        if(timerModel?.isTimerOn == true) {
-            timerModel?.timer.invalidate()
-            timerModel?.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer(timer:))
-            self.startPauzeButton.title = "Pauze"
-        }
-    }
-    
-    func updateTimer(timer: Timer) {
-        timerModel?.duration += 1
-        self.timerLabel.title = String(timerModel!.duration)
-        appDelegate.statusItem.button?.title = String(timerModel!.duration)
+        timerModel?.stopTimer()
     }
 
     override var representedObject: Any? {
