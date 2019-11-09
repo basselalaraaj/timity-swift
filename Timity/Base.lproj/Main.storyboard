@@ -714,6 +714,7 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="startPauseButton" destination="ga1-JS-duE" id="opt-tG-cxA"/>
                         <outlet property="startPauzeButton" destination="ga1-JS-duE" id="epx-IZ-htb"/>
                     </connections>
                 </viewController>
