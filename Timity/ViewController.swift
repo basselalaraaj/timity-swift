@@ -8,32 +8,50 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
-    @IBOutlet weak var startPauseButton: NSButton!
-    var startName: String = "Start"
-    var pauseName: String = "Pause"
+class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
+    @IBOutlet weak var taskTable: NSTableView!
+    
+    let list = ["Taak 1", "Taak 2", "Taak 3", "Taak 4", "Taak 5"]
+//    var startName: String = "Start"
+//    var pauseName: String = "Pause"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         timerModel?.continueTimer()
-        if(timerModel?.isTimerOn == true) {
-            self.startPauseButton?.title = pauseName
-        } else {
-            self.startPauseButton?.title = startName
-        }
+//        if(timerModel?.isTimerOn == true) {
+//            self.startPauseButton?.title = pauseName
+//        } else {
+//            self.startPauseButton?.title = startName
+//        }
     }
     
-    @IBAction func startTimer(_ sender: Any) {
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return list.count
+    }
+    
+    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
+        debugPrint(tableColumn!.identifier.rawValue)
+        if tableColumn!.identifier.rawValue == "task"{
+            return list[row]
+        }
+        if tableColumn!.identifier.rawValue == "action"{
+            return "Start"
+        }
+        return ""
+    }
+    
+    
+    @objc func startTimer() {
         if(timerModel?.isTimerOn == false) {
             timerModel?.startTimer()
-            self.startPauseButton?.title = pauseName
+//            self.startPauseButton?.title = pauseName
         } else {
             timerModel?.pauseTimer()
-            self.startPauseButton?.title = startName
+//            self.startPauseButton?.title = startName
         }
     }
-    
-    @IBAction func stopTimer(_ sender: Any) {
+
+    @objc func stopTimer() {
         timerModel?.stopTimer()
     }
 
