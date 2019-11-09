@@ -38,13 +38,13 @@ class TimerModel {
     }
     
     func stopTimer() {
-        pauseTimer()
+        pauzeTimer()
         duration = 0
         appDelegate.statusItem.button?.title = getTime()
         appDelegate.statusItem.button?.contentTintColor = .none
     }
     
-    func pauseTimer() {
+    func pauzeTimer() {
         timer.invalidate()
         isTimerOn = false
         appDelegate.statusItem.button?.contentTintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
