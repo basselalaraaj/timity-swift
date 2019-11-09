@@ -9,25 +9,25 @@
 import Cocoa
 
 class ViewController: NSViewController {
-    @IBOutlet weak var startPauzeButton: NSButton!
+    @IBOutlet weak var startPauseButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         timerModel?.continueTimer()
         if(timerModel?.isTimerOn == true) {
-            self.startPauzeButton.title = "Pauze"
+            self.startPauseButton?.title = "Pause"
         } else {
-            self.startPauzeButton.title = "Start"
+            self.startPauseButton?.title = "Start"
         }
     }
     
     @IBAction func startTimer(_ sender: Any) {
         if(timerModel?.isTimerOn == false) {
             timerModel?.startTimer()
-            self.startPauzeButton.title = "Pauze"
+            self.startPauseButton?.title = "Pause"
         } else {
-            timerModel?.pauzeTimer()
-            self.startPauzeButton.title = "Start"
+            timerModel?.pauseTimer()
+            self.startPauseButton?.title = "Start"
         }
     }
     
