@@ -8,6 +8,23 @@
 
 import Cocoa
 
+var list = [[
+    "title" : "Task 1",
+    "description" : "A very good task",
+    "project" : "Project 1",
+    "duration": 100,
+],[
+    "title" : "Task 2",
+    "description" : "A very good task",
+    "project" : "Project 2",
+    "duration": 1000,
+],[
+    "title" : "Task 3",
+    "description" : "A very good task",
+    "project" : "Project 3",
+    "duration": 4000,
+]]
+
 class TaskTableViewCell: NSTableCellView {
     var id: Int? = nil
     var duration: Int? = nil
@@ -17,8 +34,9 @@ class TaskTableViewCell: NSTableCellView {
     @IBOutlet weak var taskDuration: NSTextField!
     @IBOutlet weak var startPauseButton: NSButton!
     
-    func updateTimeLabel(label: String){
-        taskDuration.stringValue = label
+    func updateTimeLabel(){
+        taskDuration.stringValue = (timerModel?.getTime())!
+        list[id!]["duration"] = timerModel?.duration
     }
     
     @IBAction func stopTimer(_ sender: Any) {
@@ -44,31 +62,8 @@ class TaskTableViewCell: NSTableCellView {
 class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     @IBOutlet weak var taskTable: NSTableView!
     
-    let list = [[
-        "title" : "Task 1",
-        "description" : "A very good task",
-        "project" : "Project 1",
-        "duration": 100,
-    ],[
-        "title" : "Task 2",
-        "description" : "A very good task",
-        "project" : "Project 2",
-        "duration": 1000,
-    ],[
-        "title" : "Task 3",
-        "description" : "A very good task",
-        "project" : "Project 3",
-        "duration": 4000,
-    ],[
-        "title" : "Task 4",
-        "description" : "A very good task",
-        "project" : "Project 4",
-        "duration": 8000,
-    ]]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        timerModel?.continueTimer()
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -85,6 +80,17 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             cell.taskDuration.stringValue = (timerModel?.getTime(time:list[row]["duration"]! as! Int))!
             cell.id = row
             cell.duration = list[row]["duration"]! as? Int
+            
+            if(timerModel?.isTimerOn == true && timerModel?.timerId == row) {
+                timerModel?.updateTimerCallback(callBack: cell.updateTimeLabel)
+                if(timerModel?.isTimerOnPause == false) {
+                    cell.taskTitle.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+                    cell.startPauseButton.image = NSImage(named: "NSTouchBarPauseTemplate")
+                } else {
+                    cell.taskTitle.textColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+                    cell.startPauseButton.image = NSImage(named: "NSTouchBarPlayTemplate")
+                }
+            }
         }
         
         return cell

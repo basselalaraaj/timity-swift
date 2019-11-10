@@ -15,7 +15,7 @@ class TimerModel {
     
     var timerId: Int? = nil
     var duration = 0
-    var updateTimerCallback : ((String) -> Void)?
+    var timerCallback : (() -> Void)?
     
     var isTimerOn = false
     var isTimerOnPause = false
@@ -35,14 +35,14 @@ class TimerModel {
       return (seconds / 3600, (seconds % 3600) / 60)
     }
     
-    func startTimer(id: Int, duration: Int, callBack: ((String) -> Void)?) {
+    func startTimer(id: Int, duration: Int, callBack: (() -> Void)?) {
         if(isTimerOn == false || isTimerOnPause == true){
             timerId = id
             self.duration = duration
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer(timer:))
+            timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: updateTimer(timer:))
             isTimerOn = true
             isTimerOnPause = false
-            updateTimerCallback = callBack
+            updateTimerCallback(callBack: callBack)
             appDelegate.statusItem.button?.title = self.getTime()
             appDelegate.statusItem.button?.contentTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         }
@@ -67,17 +67,14 @@ class TimerModel {
         }
     }
     
-    func continueTimer() {
-        if(isTimerOn == true) {
-            timer.invalidate()
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer(timer:))
-        }
+    func updateTimer(timer: Timer) {
+        self.duration += 60
+        appDelegate.statusItem.button?.title = self.getTime()
+        timerCallback?()
     }
     
-    func updateTimer(timer: Timer) {
-        self.duration += 1
-        appDelegate.statusItem.button?.title = self.getTime()
-        updateTimerCallback?(self.getTime())
+    func updateTimerCallback(callBack: (() -> Void)?) {
+        timerCallback = callBack
     }
 
 }
