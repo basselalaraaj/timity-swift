@@ -9,18 +9,26 @@
 import Cocoa
 
 class TaskTableViewCell: NSTableCellView {
+    var taskId: Int? = nil
     @IBOutlet weak var taskTitle: NSTextField!
     @IBOutlet weak var startPauseButton: NSButton!
+    
     @IBAction func stopTimer(_ sender: Any) {
+        startPauseButton.contentTintColor = .none
+        startPauseButton.image = NSImage(named: "NSTouchBarPlayTemplate")
         timerModel?.stopTimer()
     }
     @IBAction func toggleTimer(_ sender: Any) {
-        if(timerModel?.isTimerOn == false) {
-            timerModel?.startTimer()
+        if(timerModel?.isTimerOn == false || (timerModel?.isTimerOnPause == true && timerModel?.timerId == taskId)) {
+            timerModel?.startTimer(id: taskId)
+            startPauseButton.contentTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
             startPauseButton.image = NSImage(named: "NSTouchBarPauseTemplate")
         } else {
-            timerModel?.pauseTimer()
-            startPauseButton.image = NSImage(named: "NSTouchBarPlayTemplate")
+            if(timerModel?.timerId == taskId) {
+                timerModel?.pauseTimer()
+                startPauseButton.contentTintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+                startPauseButton.image = NSImage(named: "NSTouchBarPlayTemplate")
+            }
         }
     }
 }
@@ -44,6 +52,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         
         if (tableColumn?.identifier)!.rawValue == "task" {
             cell.taskTitle.stringValue = list[row]
+            cell.taskId = row
         }
         
         return cell

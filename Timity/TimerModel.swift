@@ -9,10 +9,13 @@
 import Cocoa
 
 class TimerModel {
-    var duration = 0
-    var timer = Timer()
-    var isTimerOn = false
     let appDelegate = NSApp.delegate as! AppDelegate
+    
+    var timer = Timer()
+    var duration = 0
+    var isTimerOn = false
+    var isTimerOnPause = false
+    var timerId: Int? = nil
     
     public init?(){
         
@@ -27,27 +30,33 @@ class TimerModel {
       return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
     
-    func startTimer() {
-        if(isTimerOn == false) {
+    func startTimer(id: Int?) {
+        if(isTimerOn == false || isTimerOnPause == true){
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer(timer:))
             isTimerOn = true
+            isTimerOnPause = false
+            timerId = id
             appDelegate.statusItem.button?.contentTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-        } else {
-            pauseTimer()
         }
     }
     
     func stopTimer() {
-        pauseTimer()
-        duration = 0
-        appDelegate.statusItem.button?.title = getTime()
-        appDelegate.statusItem.button?.contentTintColor = .none
+        if(isTimerOn == true){
+            timer.invalidate()
+            isTimerOnPause = false
+            isTimerOn = false
+            duration = 0
+            appDelegate.statusItem.button?.title = getTime()
+            appDelegate.statusItem.button?.contentTintColor = .none
+        }
     }
     
     func pauseTimer() {
-        timer.invalidate()
-        isTimerOn = false
-        appDelegate.statusItem.button?.contentTintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+        if(isTimerOn == true){
+            timer.invalidate()
+            isTimerOnPause = true
+            appDelegate.statusItem.button?.contentTintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+        }
     }
     
     func continueTimer() {
