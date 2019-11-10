@@ -686,24 +686,24 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="XfG-lQ-9wD" customClass="ViewController" customModule="Timity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="310" height="437"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="72" horizontalPageScroll="10" verticalLineScroll="72" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10p-QH-L0D">
-                                <rect key="frame" x="0.0" y="29" width="393" height="241"/>
+                                <rect key="frame" x="0.0" y="37" width="310" height="400"/>
                                 <clipView key="contentView" drawsBackground="NO" id="IQD-vC-bzo">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="241"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="310" height="400"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="70" viewBased="YES" id="Kkz-E8-obG">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="241"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="400"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <tableViewGridLines key="gridStyleMask" horizontal="YES"/>
                                             <color key="gridColor" name="quaternaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn identifier="task" width="390" minWidth="70" maxWidth="1000" id="4Dt-mZ-rhn">
+                                                <tableColumn identifier="task" width="307" minWidth="70" maxWidth="1000" id="4Dt-mZ-rhn">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="task">
                                                         <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -713,11 +713,38 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="TaskCell" autoresizesSubviews="NO" id="ML5-tj-arb" customClass="TaskTableViewCell" customModule="Timity" customModuleProvider="target">
-                                                            <rect key="frame" x="1" y="1" width="390" height="70"/>
+                                                            <rect key="frame" x="1" y="1" width="307" height="70"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0BW-uT-kuc">
+                                                                    <rect key="frame" x="12" y="20" width="200" height="29"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Title" id="E6A-3B-RNq">
+                                                                        <font key="font" metaFont="system" size="25"/>
+                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="1wC-dq-koJ">
+                                                                    <rect key="frame" x="12" y="6" width="200" height="16"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Description" id="Y1w-6z-2GJ">
+                                                                        <font key="font" metaFont="message" size="11"/>
+                                                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Kho-rU-Avo">
+                                                                    <rect key="frame" x="12" y="48" width="200" height="16"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Project" id="9WS-R8-XHu">
+                                                                        <font key="font" metaFont="message" size="11"/>
+                                                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
                                                                 <button verticalHuggingPriority="750" id="G98-DE-1Qw" userLabel="Stop button">
-                                                                    <rect key="frame" x="338" y="8" width="36" height="32"/>
+                                                                    <rect key="frame" x="258" y="8" width="36" height="32"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                     <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSTouchBarRecordStopTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UuH-an-mdh">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -728,7 +755,7 @@
                                                                     </connections>
                                                                 </button>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0DV-FH-LLO">
-                                                                    <rect key="frame" x="316" y="38" width="54" height="16"/>
+                                                                    <rect key="frame" x="236" y="38" width="54" height="16"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="00:00" id="LjC-9M-5L6">
                                                                         <font key="font" metaFont="system"/>
@@ -737,7 +764,7 @@
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <button verticalHuggingPriority="750" id="YcV-pP-H7B">
-                                                                    <rect key="frame" x="312" y="8" width="36" height="32"/>
+                                                                    <rect key="frame" x="232" y="8" width="36" height="32"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                     <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSTouchBarPlayTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jaN-pP-U1m">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -747,33 +774,6 @@
                                                                         <action selector="toggleTimer:" target="ML5-tj-arb" id="zsQ-Cd-InX"/>
                                                                     </connections>
                                                                 </button>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0BW-uT-kuc">
-                                                                    <rect key="frame" x="12" y="20" width="269" height="29"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Title" id="E6A-3B-RNq">
-                                                                        <font key="font" metaFont="system" size="25"/>
-                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="1wC-dq-koJ">
-                                                                    <rect key="frame" x="12" y="6" width="265" height="16"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Description" id="Y1w-6z-2GJ">
-                                                                        <font key="font" metaFont="message" size="11"/>
-                                                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Kho-rU-Avo">
-                                                                    <rect key="frame" x="12" y="48" width="269" height="16"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Project" id="9WS-R8-XHu">
-                                                                        <font key="font" metaFont="message" size="11"/>
-                                                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
                                                             </subviews>
                                                             <connections>
                                                                 <outlet property="startPauseButton" destination="YcV-pP-H7B" id="9EP-8k-ePR"/>
@@ -805,10 +805,10 @@
                                 </scroller>
                             </scrollView>
                             <box verticalHuggingPriority="750" ambiguous="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="5QJ-hc-QoH">
-                                <rect key="frame" x="0.0" y="26" width="480" height="5"/>
+                                <rect key="frame" x="0.0" y="33" width="393" height="5"/>
                             </box>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Qc-eE-Rd8">
-                                <rect key="frame" x="12" y="-3" width="40" height="32"/>
+                                <rect key="frame" x="12" y="0.0" width="40" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5ZL-c2-74Z">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -816,7 +816,7 @@
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mII-Us-0mL">
-                                <rect key="frame" x="339" y="-3" width="40" height="32"/>
+                                <rect key="frame" x="258" y="0.0" width="40" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSActionTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EjO-Gk-GQM">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -825,12 +825,12 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="10p-QH-L0D" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="H4H-6e-Lyd"/>
-                            <constraint firstAttribute="trailing" secondItem="10p-QH-L0D" secondAttribute="trailing" id="IoY-sE-fcr"/>
-                            <constraint firstAttribute="bottom" secondItem="10p-QH-L0D" secondAttribute="bottom" constant="29" id="gig-Xb-VKo"/>
-                            <constraint firstItem="10p-QH-L0D" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="jpJ-NG-WO0"/>
-                            <constraint firstItem="5QJ-hc-QoH" firstAttribute="top" secondItem="10p-QH-L0D" secondAttribute="bottom" id="p4c-oA-Cnp"/>
-                            <constraint firstItem="10p-QH-L0D" firstAttribute="leading" secondItem="5QJ-hc-QoH" secondAttribute="leading" id="xzg-wd-vHa"/>
+                            <constraint firstItem="10p-QH-L0D" firstAttribute="leading" secondItem="5QJ-hc-QoH" secondAttribute="leading" id="17H-RJ-h2c"/>
+                            <constraint firstItem="5QJ-hc-QoH" firstAttribute="top" secondItem="10p-QH-L0D" secondAttribute="bottom" constant="1" id="DgE-th-KdX"/>
+                            <constraint firstAttribute="bottom" secondItem="10p-QH-L0D" secondAttribute="bottom" constant="37" id="fy5-25-Pxl"/>
+                            <constraint firstItem="10p-QH-L0D" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="i1s-c6-Qpl"/>
+                            <constraint firstItem="10p-QH-L0D" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="qwy-Bt-8wz"/>
+                            <constraint firstAttribute="trailing" secondItem="10p-QH-L0D" secondAttribute="trailing" id="rzd-WR-RUk"/>
                         </constraints>
                     </view>
                     <connections>
@@ -839,7 +839,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31.5" y="244"/>
+            <point key="canvasLocation" x="-10" y="327.5"/>
         </scene>
     </scenes>
     <resources>

@@ -10,19 +10,19 @@ import Cocoa
 
 var list = [[
     "title" : "Task 1",
-    "description" : "A very good task",
+    "description" : "A nice task",
     "project" : "Project 1",
-    "duration": 100,
+    "duration": 2300,
 ],[
     "title" : "Task 2",
-    "description" : "A very good task",
+    "description" : "Oke task",
     "project" : "Project 2",
-    "duration": 1000,
+    "duration": 1200,
 ],[
     "title" : "Task 3",
     "description" : "A very good task",
     "project" : "Project 3",
-    "duration": 4000,
+    "duration": 4500,
 ]]
 
 class TaskTableViewCell: NSTableCellView {
