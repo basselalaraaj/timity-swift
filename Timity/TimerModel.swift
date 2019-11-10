@@ -12,30 +12,38 @@ class TimerModel {
     let appDelegate = NSApp.delegate as! AppDelegate
     
     var timer = Timer()
+    
+    var timerId: Int? = nil
     var duration = 0
+    var updateTimerCallback : ((String) -> Void)?
+    
     var isTimerOn = false
     var isTimerOnPause = false
-    var timerId: Int? = nil
+    
     
     public init?(){
         
     }
     
-    func getTime()-> String {
-        let (h, m, s) = secondsToHoursMinutesSeconds(seconds:duration)
+    func getTime(time: Int = -1)-> String {
+        let timeInit = time >= 0 ? time : duration
+        let (h, m) = secondsToHoursMinutesSeconds(seconds:timeInit)
         return String(format: " %02d:%02d", h, m)
     }
     
-    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
-      return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int) {
+      return (seconds / 3600, (seconds % 3600) / 60)
     }
     
-    func startTimer(id: Int?) {
+    func startTimer(id: Int, duration: Int, callBack: ((String) -> Void)?) {
         if(isTimerOn == false || isTimerOnPause == true){
+            timerId = id
+            self.duration = duration
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: updateTimer(timer:))
             isTimerOn = true
             isTimerOnPause = false
-            timerId = id
+            updateTimerCallback = callBack
+            appDelegate.statusItem.button?.title = self.getTime()
             appDelegate.statusItem.button?.contentTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         }
     }
@@ -67,8 +75,9 @@ class TimerModel {
     }
     
     func updateTimer(timer: Timer) {
-        timerModel?.duration += 1
-        appDelegate.statusItem.button?.title = timerModel!.getTime()
+        self.duration += 1
+        appDelegate.statusItem.button?.title = self.getTime()
+        updateTimerCallback?(self.getTime())
     }
 
 }

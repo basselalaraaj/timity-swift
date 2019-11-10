@@ -9,9 +9,17 @@
 import Cocoa
 
 class TaskTableViewCell: NSTableCellView {
-    var taskId: Int? = nil
+    var id: Int? = nil
+    var duration: Int? = nil
+    @IBOutlet weak var taskProject: NSTextField!
     @IBOutlet weak var taskTitle: NSTextField!
+    @IBOutlet weak var taskDescription: NSTextField!
+    @IBOutlet weak var taskDuration: NSTextField!
     @IBOutlet weak var startPauseButton: NSButton!
+    
+    func updateTimeLabel(label: String){
+        taskDuration.stringValue = label
+    }
     
     @IBAction func stopTimer(_ sender: Any) {
         taskTitle.textColor = .none
@@ -19,12 +27,12 @@ class TaskTableViewCell: NSTableCellView {
         timerModel?.stopTimer()
     }
     @IBAction func toggleTimer(_ sender: Any) {
-        if(timerModel?.isTimerOn == false || (timerModel?.isTimerOnPause == true && timerModel?.timerId == taskId)) {
-            timerModel?.startTimer(id: taskId)
+        if(timerModel?.isTimerOn == false || (timerModel?.isTimerOnPause == true && timerModel?.timerId == id)) {
+            timerModel?.startTimer(id: id!, duration: duration!, callBack: updateTimeLabel)
             taskTitle.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
             startPauseButton.image = NSImage(named: "NSTouchBarPauseTemplate")
         } else {
-            if(timerModel?.timerId == taskId) {
+            if(timerModel?.timerId == id) {
                 timerModel?.pauseTimer()
                 taskTitle.textColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
                 startPauseButton.image = NSImage(named: "NSTouchBarPlayTemplate")
@@ -36,7 +44,27 @@ class TaskTableViewCell: NSTableCellView {
 class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     @IBOutlet weak var taskTable: NSTableView!
     
-    let list = ["Taak 1", "Taak 2", "Taak 3", "Taak 4", "Taak 5"]
+    let list = [[
+        "title" : "Task 1",
+        "description" : "A very good task",
+        "project" : "Project 1",
+        "duration": 100,
+    ],[
+        "title" : "Task 2",
+        "description" : "A very good task",
+        "project" : "Project 2",
+        "duration": 1000,
+    ],[
+        "title" : "Task 3",
+        "description" : "A very good task",
+        "project" : "Project 3",
+        "duration": 4000,
+    ],[
+        "title" : "Task 4",
+        "description" : "A very good task",
+        "project" : "Project 4",
+        "duration": 8000,
+    ]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +79,12 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TaskCell"), owner: self) as? TaskTableViewCell else { return nil }
         
         if (tableColumn?.identifier)!.rawValue == "task" {
-            cell.taskTitle.stringValue = list[row]
-            cell.taskId = row
+            cell.taskProject.stringValue = list[row]["project"]! as! String
+            cell.taskTitle.stringValue = list[row]["title"]! as! String
+            cell.taskDescription.stringValue = list[row]["description"]! as! String
+            cell.taskDuration.stringValue = (timerModel?.getTime(time:list[row]["duration"]! as! Int))!
+            cell.id = row
+            cell.duration = list[row]["duration"]! as? Int
         }
         
         return cell

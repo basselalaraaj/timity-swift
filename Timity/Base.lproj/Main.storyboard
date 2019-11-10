@@ -705,7 +705,7 @@
                                             <tableColumns>
                                                 <tableColumn identifier="task" width="390" minWidth="70" maxWidth="1000" id="4Dt-mZ-rhn">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="task">
-                                                        <font key="font" metaFont="label" size="11"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -713,7 +713,7 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="TaskCell" autoresizesSubviews="NO" id="ML5-tj-arb" customClass="TaskTableViewCell" customModule="Timity" customModuleProvider="target">
-                                                            <rect key="frame" x="1" y="1" width="384" height="70"/>
+                                                            <rect key="frame" x="1" y="1" width="390" height="70"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button verticalHuggingPriority="750" id="G98-DE-1Qw" userLabel="Stop button">
@@ -748,26 +748,38 @@
                                                                     </connections>
                                                                 </button>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0BW-uT-kuc">
-                                                                    <rect key="frame" x="12" y="12" width="269" height="29"/>
+                                                                    <rect key="frame" x="12" y="20" width="269" height="29"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Task" id="E6A-3B-RNq">
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Title" id="E6A-3B-RNq">
                                                                         <font key="font" metaFont="system" size="25"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Kho-rU-Avo">
-                                                                    <rect key="frame" x="12" y="42" width="269" height="16"/>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="1wC-dq-koJ">
+                                                                    <rect key="frame" x="12" y="6" width="265" height="16"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Bassel &amp; Sil software" id="9WS-R8-XHu">
-                                                                        <font key="font" metaFont="system"/>
-                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Description" id="Y1w-6z-2GJ">
+                                                                        <font key="font" metaFont="message" size="11"/>
+                                                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Kho-rU-Avo">
+                                                                    <rect key="frame" x="12" y="48" width="269" height="16"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Project" id="9WS-R8-XHu">
+                                                                        <font key="font" metaFont="message" size="11"/>
+                                                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
                                                             </subviews>
                                                             <connections>
                                                                 <outlet property="startPauseButton" destination="YcV-pP-H7B" id="9EP-8k-ePR"/>
+                                                                <outlet property="taskDescription" destination="1wC-dq-koJ" id="B3y-ls-Sv9"/>
+                                                                <outlet property="taskDuration" destination="0DV-FH-LLO" id="Uer-D8-XrV"/>
+                                                                <outlet property="taskProject" destination="Kho-rU-Avo" id="ZIg-sJ-gpd"/>
                                                                 <outlet property="taskTitle" destination="0BW-uT-kuc" id="tDp-TR-Oxd"/>
                                                             </connections>
                                                         </tableCellView>
