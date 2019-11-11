@@ -9,18 +9,21 @@
 import Cocoa
 
 var list = [[
+    "client" : "Bassel",
     "title" : "Task 1",
     "description" : "A nice task",
     "project" : "Project 1",
     "duration": 2300,
     "color": "#FFD764"
 ],[
+    "client" : "Sil",
     "title" : "Task 2",
     "description" : "Oke task",
     "project" : "Project 2",
     "duration": 1200,
     "color": "#49BDF2",
 ],[
+    "client" : "Some Other",
     "title" : "Task 3",
     "description" : "A very good task",
     "project" : "Project 3",
@@ -64,8 +67,10 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TaskCell"), owner: self) as? TaskTableViewCell else { return nil }
         
         if (tableColumn?.identifier)!.rawValue == "task" {
+//            cell.taskClient.stringValue = list[row]["client"]! as! String
             cell.taskProject.stringValue = list[row]["project"]! as! String
             cell.taskTitle.stringValue = list[row]["title"]! as! String
+//            cell.taskColor.stringValue = list[row]["color"]! as! String
             cell.taskDescription.stringValue = list[row]["description"]! as! String
             cell.taskDuration.stringValue = (timerModel?.getTime(time:list[row]["duration"]! as! Int))!
             cell.id = row
@@ -73,7 +78,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             if(timerModel?.isTimerOn == true && timerModel?.timerId == row) {
                 timerModel?.updateTimerCallback(callBack: cell.updateTimeLabel)
                 if(timerModel?.isTimerOnPause == false) {
-                    cell.taskTitle.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+                    cell.taskTitle.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
                     cell.startPauseButton.image = NSImage(named: "NSTouchBarPauseTemplate")
                 } else {
                     cell.taskTitle.textColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
@@ -97,9 +102,11 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
 extension ViewController: AddTaskDelegate{
     func addTask(task: Task) {
         let task = [
+//            "client" : task.client,
             "title" : task.title,
             "description" : task.description,
             "project" : task.project,
+//            "color" : task.color,
             "duration": 0,
             ] as [String : Any]
         list.append(task)

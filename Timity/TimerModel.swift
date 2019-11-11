@@ -48,6 +48,8 @@ class TimerModel {
         }
     }
     
+    
+    
     func stopTimer() {
         if(isTimerOn == true){
             timer.invalidate()

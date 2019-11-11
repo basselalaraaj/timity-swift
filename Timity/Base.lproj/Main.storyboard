@@ -685,7 +685,7 @@
         <scene sceneID="LZO-4S-29p">
             <objects>
                 <viewController storyboardIdentifier="AddTask" id="dYK-7b-T08" customClass="AddTaskViewController" customModule="Timity" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="PgR-oM-dcc">
+                    <view key="view" wantsLayer="YES" id="PgR-oM-dcc">
                         <rect key="frame" x="0.0" y="0.0" width="212" height="200"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -699,7 +699,10 @@
                             </textField>
                             <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lO8-6b-WfJ">
                                 <rect key="frame" x="20" y="124" width="172" height="21"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Title" drawsBackground="YES" id="TUM-f3-fJq">
+                                <shadow key="shadow">
+                                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </shadow>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Project Title" drawsBackground="YES" id="TUM-f3-fJq">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -730,7 +733,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Color" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="UNt-nT-Tls" id="YL7-Ie-zv8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="Jou-6I-XwL">
                                         <items>
                                             <menuItem title="Color" state="on" id="UNt-nT-Tls"/>
@@ -752,10 +755,10 @@
                                     </menu>
                                 </popUpButtonCell>
                             </popUpButton>
-                            <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ef2-jm-B8Q">
+                            <comboBox toolTip="Select a client" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ef2-jm-B8Q">
                                 <rect key="frame" x="99" y="156" width="96" height="25"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="Client" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="jaE-k0-jBO">
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Client Name" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="jaE-k0-jBO">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -810,7 +813,7 @@
                                             <tableColumns>
                                                 <tableColumn identifier="task" width="307" minWidth="70" maxWidth="1000" id="4Dt-mZ-rhn" colorLabel="IBBuiltInLabel-Orange">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Timity Timers">
-                                                        <font key="font" metaFont="menu" size="11"/>
+                                                        <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -821,6 +824,15 @@
                                                             <rect key="frame" x="1" y="1" width="307" height="70"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
+                                                                <box alphaValue="0.10000000000000001" boxType="custom" borderType="none" borderWidth="4" title="Box" titlePosition="aboveTop" id="Csu-XD-0hN">
+                                                                    <rect key="frame" x="10" y="0.0" width="299" height="77"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                    <view key="contentView" id="qw0-s0-Sq9">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="299" height="77"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    </view>
+                                                                    <color key="fillColor" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
+                                                                </box>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Kho-rU-Avo">
                                                                     <rect key="frame" x="24" y="39" width="200" height="16"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
@@ -861,15 +873,6 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
-                                                                <box boxType="custom" borderWidth="4" title="Box" titlePosition="aboveTop" id="war-39-oQY">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="8" height="77"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                    <view key="contentView" id="GYe-AJ-c3x">
-                                                                        <rect key="frame" x="4" y="4" width="0.0" height="69"/>
-                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                    </view>
-                                                                    <color key="fillColor" red="0.41993594169616699" green="0.78247445402011062" blue="0.41993594169616699" alpha="0.0" colorSpace="calibratedRGB"/>
-                                                                </box>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0BW-uT-kuc">
                                                                     <rect key="frame" x="24" y="13" width="200" height="29"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
@@ -888,6 +891,15 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
+                                                                <box boxType="custom" borderType="none" borderWidth="4" title="Box" titlePosition="aboveTop" id="u48-SC-KiP">
+                                                                    <rect key="frame" x="-3" y="-4" width="13" height="77"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                    <view key="contentView" id="KNi-fs-iSO">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="13" height="77"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    </view>
+                                                                    <color key="fillColor" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
+                                                                </box>
                                                             </subviews>
                                                             <connections>
                                                                 <outlet property="startPauseButton" destination="YcV-pP-H7B" id="9EP-8k-ePR"/>
