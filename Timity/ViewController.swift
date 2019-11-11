@@ -31,22 +31,32 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if(list.count > 0) {
+            return
+        }
+        
         let query = #"{ "query": "{tasks{client,title,description,project,duration,color}}" }"#
-        let url = URL(string: "http://api.timity.nl/")!
+        let url = URL(string: "https://api.timity.nl/")!
         var request = URLRequest(url: url)
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
-        request.httpBody = NSData(base64Encoded: query) as Data?
+        request.httpBody = query.data(using: String.Encoding.utf8)
+        
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 print("error: \(error)")
             } else {
-                if let response = response as? HTTPURLResponse {
-                    print("statusCode: \(response.statusCode)")
-                }
-                if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                    print("data: \(dataString)")
+                if let data = data, let _ = String(data: data, encoding: .utf8) {
+                    let deserialized = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: [String: [Any]]]
+                    let deserializedTasks = deserialized!["data"]?["tasks"]!
+                    for case let result in deserializedTasks! {
+                        let item = result as! [String: Any]
+                        list.append(Task(client: item["client"]! as! String, title: item["title"]! as! String, project: item["project"]! as! String, description: item["description"]! as! String, duration: item["duration"]! as! Int, color: item["color"]! as! String))
+                    }
+                    DispatchQueue.main.async {
+                        self.taskTable.reloadData()
+                    }
                 }
             }
         }

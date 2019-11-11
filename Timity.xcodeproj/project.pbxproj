@@ -88,6 +88,8 @@
 			dependencies = (
 			);
 			name = Timity;
+			packageProductDependencies = (
+			);
 			productName = Timity;
 			productReference = FCA3F2472375D022008F8DE0 /* Timity.app */;
 			productType = "com.apple.product-type.application";
@@ -116,6 +118,8 @@
 				Base,
 			);
 			mainGroup = FCA3F23E2375D022008F8DE0;
+			packageReferences = (
+			);
 			productRefGroup = FCA3F2482375D022008F8DE0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
