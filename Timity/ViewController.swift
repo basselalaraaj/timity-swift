@@ -8,38 +8,22 @@
 
 import Cocoa
 
-var list = [[
-    "client" : "Bassel",
-    "title" : "Task 1",
-    "description" : "A nice task",
-    "project" : "Project 1",
-    "duration": 2300,
-    "color": "#FFD764"
-],[
-    "client" : "Sil",
-    "title" : "Task 2",
-    "description" : "Oke task",
-    "project" : "Project 2",
-    "duration": 1200,
-    "color": "#49BDF2",
-],[
-    "client" : "Some Other",
-    "title" : "Task 3",
-    "description" : "A very good task",
-    "project" : "Project 3",
-    "duration": 4500,
-    "color": "#B8D3A5",
-]]
+let query = "{ \"query\": \"{tasks{client,title,description,project,duration,color}}\" }"
 
 struct Task {
+    var client: String
     var title: String
     var project: String
     var description: String
+    var duration: Int
+    var color: String
 }
 
 protocol AddTaskDelegate {
     func addTask(task: Task)
 }
+
+var list: [Task?] = []
 
 class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     @IBOutlet weak var taskTable: NSTableView!
@@ -66,13 +50,13 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TaskCell"), owner: self) as? TaskTableViewCell else { return nil }
         
-        if (tableColumn?.identifier)!.rawValue == "task" {
+        if (tableColumn?.identifier)!.rawValue == "task" && list[row] != nil {
 //            cell.taskClient.stringValue = list[row]["client"]! as! String
-            cell.taskProject.stringValue = list[row]["project"]! as! String
-            cell.taskTitle.stringValue = list[row]["title"]! as! String
+            cell.taskProject.stringValue = list[row]!.project
+            cell.taskTitle.stringValue = list[row]!.title
 //            cell.taskColor.stringValue = list[row]["color"]! as! String
-            cell.taskDescription.stringValue = list[row]["description"]! as! String
-            cell.taskDuration.stringValue = (timerModel?.getTime(time:list[row]["duration"]! as! Int))!
+            cell.taskDescription.stringValue = list[row]!.description
+            cell.taskDuration.stringValue = (timerModel?.getTime(time:list[row]!.duration))!
             cell.id = row
             
             if(timerModel?.isTimerOn == true && timerModel?.timerId == row) {
@@ -101,14 +85,6 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
 
 extension ViewController: AddTaskDelegate{
     func addTask(task: Task) {
-        let task = [
-//            "client" : task.client,
-            "title" : task.title,
-            "description" : task.description,
-            "project" : task.project,
-//            "color" : task.color,
-            "duration": 0,
-            ] as [String : Any]
         list.append(task)
         self.taskTable.reloadData()
         self.addTaskPopoverView.close()

@@ -20,7 +20,7 @@ class AddTaskViewController: NSViewController {
     }
     
     @objc func handleDone(){
-        let task = Task(title: taskTitle.stringValue, project: taskProject.stringValue,description: taskDescription.stringValue)
+        let task = Task(client: "test", title: taskTitle.stringValue, project: taskProject.stringValue,description: taskDescription.stringValue, duration: 0, color: "#ff0000")
         delegate?.addTask(task: task)
     }
 

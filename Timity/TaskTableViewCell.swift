@@ -18,7 +18,9 @@ class TaskTableViewCell: NSTableCellView {
     
     func updateTimeLabel(){
         taskDuration.stringValue = (timerModel?.getTime())!
-        list[id!]["duration"] = timerModel?.duration
+        if list[id!] != nil {
+            list[id!]?.duration = timerModel!.duration
+        }
     }
     
     @IBAction func stopTimer(_ sender: Any) {
@@ -27,8 +29,8 @@ class TaskTableViewCell: NSTableCellView {
         timerModel?.stopTimer()
     }
     @IBAction func toggleTimer(_ sender: Any) {
-        if(timerModel?.isTimerOn == false || (timerModel?.isTimerOnPause == true && timerModel?.timerId == id)) {
-            timerModel?.startTimer(id: id!, duration: list[id!]["duration"] as! Int, callBack: updateTimeLabel)
+        if(timerModel?.isTimerOn == false || (timerModel?.isTimerOnPause == true && timerModel?.timerId == id && list[id!] != nil)) {
+            timerModel?.startTimer(id: id!, duration: list[id!]!.duration, callBack: updateTimeLabel)
             taskTitle.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
             startPauseButton.image = NSImage(named: "NSTouchBarPauseTemplate")
         } else {
