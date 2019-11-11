@@ -12,6 +12,8 @@
 		FCA3F24F2375D024008F8DE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA3F24E2375D024008F8DE0 /* Assets.xcassets */; };
 		FCA3F2522375D024008F8DE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA3F2502375D024008F8DE0 /* Main.storyboard */; };
 		FCB11A8123761D1100DE51DE /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB11A8023761D1100DE51DE /* TimerModel.swift */; };
+		FCC6A7EF23796E8C0047BD69 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6A7EE23796E8C0047BD69 /* TaskTableViewCell.swift */; };
+		FCC6A7F123796EC80047BD69 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC6A7F023796EC80047BD69 /* AddTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		FCA3F2532375D024008F8DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCA3F2542375D024008F8DE0 /* Timity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Timity.entitlements; sourceTree = "<group>"; };
 		FCB11A8023761D1100DE51DE /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		FCC6A7EE23796E8C0047BD69 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		FCC6A7F023796EC80047BD69 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 				FCA3F24A2375D022008F8DE0 /* AppDelegate.swift */,
 				FCA3F24C2375D022008F8DE0 /* ViewController.swift */,
 				FCB11A8023761D1100DE51DE /* TimerModel.swift */,
+				FCC6A7EE23796E8C0047BD69 /* TaskTableViewCell.swift */,
+				FCC6A7F023796EC80047BD69 /* AddTaskViewController.swift */,
 				FCA3F24E2375D024008F8DE0 /* Assets.xcassets */,
 				FCA3F2502375D024008F8DE0 /* Main.storyboard */,
 				FCA3F2532375D024008F8DE0 /* Info.plist */,
@@ -136,9 +142,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCC6A7EF23796E8C0047BD69 /* TaskTableViewCell.swift in Sources */,
 				FCB11A8123761D1100DE51DE /* TimerModel.swift in Sources */,
 				FCA3F24D2375D022008F8DE0 /* ViewController.swift in Sources */,
 				FCA3F24B2375D022008F8DE0 /* AppDelegate.swift in Sources */,
+				FCC6A7F123796EC80047BD69 /* AddTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
