@@ -83,7 +83,6 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
 //            cell.taskClient.stringValue = list[row]["client"]! as! String
             cell.taskProject.stringValue = list[row]!.project
             cell.taskTitle.stringValue = list[row]!.title
-//            cell.taskColor.stringValue = list[row]["color"]! as! String
             cell.taskDescription.stringValue = list[row]!.description
             cell.taskColor.fillColor = hexColor(hexColor: list[row]!.color)
             cell.taskDuration.stringValue = (timerModel?.getTime(time:list[row]!.duration))!
