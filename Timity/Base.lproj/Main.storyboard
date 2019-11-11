@@ -821,17 +821,8 @@
                                                             <rect key="frame" x="1" y="1" width="307" height="70"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0BW-uT-kuc">
-                                                                    <rect key="frame" x="12" y="20" width="200" height="29"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                    <textFieldCell key="cell" alignment="left" title="Title" id="E6A-3B-RNq">
-                                                                        <font key="font" metaFont="system" size="25"/>
-                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Kho-rU-Avo">
-                                                                    <rect key="frame" x="12" y="48" width="200" height="16"/>
+                                                                    <rect key="frame" x="24" y="39" width="200" height="16"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Project" id="9WS-R8-XHu">
                                                                         <font key="font" metaFont="label" size="11"/>
@@ -870,8 +861,26 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
+                                                                <box boxType="custom" borderWidth="4" title="Box" titlePosition="aboveTop" id="war-39-oQY">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="8" height="77"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                    <view key="contentView" id="GYe-AJ-c3x">
+                                                                        <rect key="frame" x="4" y="4" width="0.0" height="69"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    </view>
+                                                                    <color key="fillColor" red="0.41993594169616699" green="0.78247445402011062" blue="0.41993594169616699" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                                </box>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0BW-uT-kuc">
+                                                                    <rect key="frame" x="24" y="13" width="200" height="29"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <textFieldCell key="cell" alignment="left" title="Title" id="E6A-3B-RNq">
+                                                                        <font key="font" metaFont="system" size="25"/>
+                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="1wC-dq-koJ">
-                                                                    <rect key="frame" x="12" y="3" width="307" height="16"/>
+                                                                    <rect key="frame" x="24" y="-3" width="307" height="16"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Description" id="Y1w-6z-2GJ">
                                                                         <font key="font" metaFont="label" size="11"/>
