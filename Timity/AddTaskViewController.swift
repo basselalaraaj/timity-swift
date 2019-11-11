@@ -8,16 +8,6 @@
 
 import Cocoa
 
-struct Task {
-    var title: String
-    var project: String
-    var description: String
-}
-
-protocol AddTaskDelegate {
-    func addTask(task: Task)
-}
-
 class AddTaskViewController: NSViewController {
     var delegate: AddTaskDelegate?
     

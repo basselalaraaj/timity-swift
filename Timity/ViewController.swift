@@ -25,6 +25,16 @@ var list = [[
     "duration": 4500,
 ]]
 
+struct Task {
+    var title: String
+    var project: String
+    var description: String
+}
+
+protocol AddTaskDelegate {
+    func addTask(task: Task)
+}
+
 class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     @IBOutlet weak var taskTable: NSTableView!
     @IBOutlet weak var addTaskButton: NSButton!
