@@ -733,7 +733,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="Color" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="UNt-nT-Tls" id="YL7-Ie-zv8">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
+                                    <font key="font" metaFont="system"/>
                                     <menu key="menu" id="Jou-6I-XwL">
                                         <items>
                                             <menuItem title="Color" state="on" id="UNt-nT-Tls"/>
@@ -813,7 +813,7 @@
                                             <tableColumns>
                                                 <tableColumn identifier="task" width="307" minWidth="70" maxWidth="1000" id="4Dt-mZ-rhn" colorLabel="IBBuiltInLabel-Orange">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Timity Timers">
-                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -824,57 +824,17 @@
                                                             <rect key="frame" x="1" y="1" width="307" height="70"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <box alphaValue="0.10000000000000001" boxType="custom" borderType="none" borderWidth="4" title="Box" titlePosition="aboveTop" id="Csu-XD-0hN">
-                                                                    <rect key="frame" x="10" y="0.0" width="299" height="77"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                    <view key="contentView" id="qw0-s0-Sq9">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="299" height="77"/>
-                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                    </view>
-                                                                    <color key="fillColor" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
-                                                                </box>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Kho-rU-Avo">
-                                                                    <rect key="frame" x="24" y="39" width="200" height="16"/>
+                                                                    <rect key="frame" x="16" y="48" width="200" height="16"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Project" id="9WS-R8-XHu">
-                                                                        <font key="font" metaFont="menu" size="11"/>
+                                                                        <font key="font" metaFont="message" size="11"/>
                                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
-                                                                <button verticalHuggingPriority="750" id="G98-DE-1Qw" userLabel="Stop button">
-                                                                    <rect key="frame" x="275" y="21" width="29" height="21"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSTouchBarRecordStopTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="UuH-an-mdh">
-                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                        <font key="font" metaFont="system"/>
-                                                                    </buttonCell>
-                                                                    <connections>
-                                                                        <action selector="stopTimer:" target="ML5-tj-arb" id="CDz-0d-HAt"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button verticalHuggingPriority="750" id="YcV-pP-H7B">
-                                                                    <rect key="frame" x="261" y="21" width="24" height="21"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSTouchBarPlayTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="jaN-pP-U1m">
-                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                        <font key="font" metaFont="system"/>
-                                                                    </buttonCell>
-                                                                    <connections>
-                                                                        <action selector="toggleTimer:" target="ML5-tj-arb" id="zsQ-Cd-InX"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0DV-FH-LLO">
-                                                                    <rect key="frame" x="215" y="24" width="54" height="16"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                    <textFieldCell key="cell" selectable="YES" editable="YES" alignment="center" title="00:00" id="LjC-9M-5L6">
-                                                                        <font key="font" metaFont="system"/>
-                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0BW-uT-kuc">
-                                                                    <rect key="frame" x="24" y="13" width="200" height="29"/>
+                                                                    <rect key="frame" x="16" y="22" width="200" height="29"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <textFieldCell key="cell" alignment="left" title="Title" id="E6A-3B-RNq">
                                                                         <font key="font" metaFont="system" size="25"/>
@@ -883,10 +843,10 @@
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="1wC-dq-koJ">
-                                                                    <rect key="frame" x="24" y="-3" width="307" height="16"/>
+                                                                    <rect key="frame" x="16" y="6" width="307" height="16"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Description" id="Y1w-6z-2GJ">
-                                                                        <font key="font" metaFont="menu" size="11"/>
+                                                                        <font key="font" metaFont="message" size="11"/>
                                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
@@ -898,11 +858,42 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="13" height="77"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     </view>
-                                                                    <color key="fillColor" name="systemYellowColor" catalog="System" colorSpace="catalog"/>
                                                                 </box>
+                                                                <button verticalHuggingPriority="750" id="G98-DE-1Qw" userLabel="Stop button">
+                                                                    <rect key="frame" x="269" y="24" width="29" height="21"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSTouchBarRecordStopTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="UuH-an-mdh">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="stopTimer:" target="ML5-tj-arb" id="CDz-0d-HAt"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" id="YcV-pP-H7B">
+                                                                    <rect key="frame" x="255" y="24" width="24" height="21"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSTouchBarPlayTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="jaN-pP-U1m">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="toggleTimer:" target="ML5-tj-arb" id="zsQ-Cd-InX"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0DV-FH-LLO">
+                                                                    <rect key="frame" x="209" y="27" width="54" height="16"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <textFieldCell key="cell" selectable="YES" editable="YES" alignment="center" title="00:00" id="LjC-9M-5L6">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
                                                             </subviews>
                                                             <connections>
                                                                 <outlet property="startPauseButton" destination="YcV-pP-H7B" id="9EP-8k-ePR"/>
+                                                                <outlet property="taskColor" destination="u48-SC-KiP" id="0EE-dA-Pwb"/>
                                                                 <outlet property="taskDescription" destination="1wC-dq-koJ" id="B3y-ls-Sv9"/>
                                                                 <outlet property="taskDuration" destination="0DV-FH-LLO" id="Uer-D8-XrV"/>
                                                                 <outlet property="taskProject" destination="Kho-rU-Avo" id="ZIg-sJ-gpd"/>

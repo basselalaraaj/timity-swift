@@ -14,7 +14,9 @@ class TaskTableViewCell: NSTableCellView {
     @IBOutlet weak var taskTitle: NSTextField!
     @IBOutlet weak var taskDescription: NSTextField!
     @IBOutlet weak var taskDuration: NSTextField!
+    @IBOutlet weak var taskColor: NSBox!
     @IBOutlet weak var startPauseButton: NSButton!
+    
     
     func updateTimeLabel(){
         taskDuration.stringValue = (timerModel?.getTime())!

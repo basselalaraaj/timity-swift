@@ -85,6 +85,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             cell.taskTitle.stringValue = list[row]!.title
 //            cell.taskColor.stringValue = list[row]["color"]! as! String
             cell.taskDescription.stringValue = list[row]!.description
+            cell.taskColor.fillColor = hexColor(hexColor: list[row]!.color)
             cell.taskDuration.stringValue = (timerModel?.getTime(time:list[row]!.duration))!
             cell.id = row
             
@@ -94,7 +95,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
                     cell.taskTitle.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
                     cell.startPauseButton.image = NSImage(named: "NSTouchBarPauseTemplate")
                 } else {
-                    cell.taskTitle.textColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+//                    cell.taskTitle.textColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
                     cell.startPauseButton.image = NSImage(named: "NSTouchBarPlayTemplate")
                 }
             }
@@ -118,4 +119,15 @@ extension ViewController: AddTaskDelegate{
         self.taskTable.reloadData()
         self.addTaskPopoverView.close()
     }
+}
+
+func hexColor (hexColor: String) -> NSColor {
+    let scannHex = Scanner(string: hexColor)
+    var rgbValue: UInt64 = 0
+    scannHex.scanLocation = 0
+    scannHex.scanHexInt64(&rgbValue)
+    let r = (rgbValue & 0xff0000) >> 16
+    let g = (rgbValue & 0xff00) >> 8
+    let b = rgbValue & 0xff
+    return #colorLiteral(red: Float(CGFloat(r) / 0xff), green: Float(CGFloat(g) / 0xff), blue: Float(CGFloat(b) / 0xff), alpha: 1)
 }
