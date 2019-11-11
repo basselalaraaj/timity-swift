@@ -13,16 +13,19 @@ var list = [[
     "description" : "A nice task",
     "project" : "Project 1",
     "duration": 2300,
+    "color": "#FFD764"
 ],[
     "title" : "Task 2",
     "description" : "Oke task",
     "project" : "Project 2",
     "duration": 1200,
+    "color": "#49BDF2",
 ],[
     "title" : "Task 3",
     "description" : "A very good task",
     "project" : "Project 3",
     "duration": 4500,
+    "color": "#B8D3A5",
 ]]
 
 class TaskTableViewCell: NSTableCellView {
