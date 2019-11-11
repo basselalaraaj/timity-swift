@@ -25,68 +25,6 @@ var list = [[
     "duration": 4500,
 ]]
 
-class TaskTableViewCell: NSTableCellView {
-    var id: Int? = nil
-    @IBOutlet weak var taskProject: NSTextField!
-    @IBOutlet weak var taskTitle: NSTextField!
-    @IBOutlet weak var taskDescription: NSTextField!
-    @IBOutlet weak var taskDuration: NSTextField!
-    @IBOutlet weak var startPauseButton: NSButton!
-    
-    func updateTimeLabel(){
-        taskDuration.stringValue = (timerModel?.getTime())!
-        list[id!]["duration"] = timerModel?.duration
-    }
-    
-    @IBAction func stopTimer(_ sender: Any) {
-        taskTitle.textColor = .none
-        startPauseButton.image = NSImage(named: "NSTouchBarPlayTemplate")
-        timerModel?.stopTimer()
-    }
-    @IBAction func toggleTimer(_ sender: Any) {
-        if(timerModel?.isTimerOn == false || (timerModel?.isTimerOnPause == true && timerModel?.timerId == id)) {
-            timerModel?.startTimer(id: id!, duration: list[id!]["duration"] as! Int, callBack: updateTimeLabel)
-            taskTitle.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-            startPauseButton.image = NSImage(named: "NSTouchBarPauseTemplate")
-        } else {
-            if(timerModel?.timerId == id) {
-                timerModel?.pauseTimer()
-                taskTitle.textColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
-                startPauseButton.image = NSImage(named: "NSTouchBarPlayTemplate")
-            }
-        }
-    }
-}
-
-struct Task {
-    var title: String
-    var project: String
-    var description: String
-}
-
-protocol AddTaskDelegate {
-    func addTask(task: Task)
-}
-
-class AddTaskViewController: NSViewController {
-    var delegate: AddTaskDelegate?
-    
-    @IBOutlet weak var taskProject: NSTextField!
-    @IBOutlet weak var taskTitle: NSTextField!
-    @IBOutlet weak var taskDescription: NSTextField!
-    
-    @IBAction func addNewTask(_ sender: Any) {
-        handleDone()
-    }
-    
-    @objc func handleDone(){
-        let task = Task(title: taskTitle.stringValue, project: taskProject.stringValue,description: taskDescription.stringValue)
-        delegate?.addTask(task: task)
-    }
-
-
-}
-
 class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     @IBOutlet weak var taskTable: NSTableView!
     @IBOutlet weak var addTaskButton: NSButton!
