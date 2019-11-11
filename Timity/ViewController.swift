@@ -8,8 +8,6 @@
 
 import Cocoa
 
-let query = "{ \"query\": \"{tasks{client,title,description,project,duration,color}}\" }"
-
 struct Task {
     var client: String
     var title: String
@@ -32,6 +30,27 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let query = #"{ "query": "{tasks{client,title,description,project,duration,color}}" }"#
+        let url = URL(string: "http://api.timity.nl/")!
+        var request = URLRequest(url: url)
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        request.httpBody = NSData(base64Encoded: query) as Data?
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("error: \(error)")
+            } else {
+                if let response = response as? HTTPURLResponse {
+                    print("statusCode: \(response.statusCode)")
+                }
+                if let data = data, let dataString = String(data: data, encoding: .utf8) {
+                    print("data: \(dataString)")
+                }
+            }
+        }
+        task.resume()
     }
     
     @IBAction func handleAddTask(_ sender: Any) {
