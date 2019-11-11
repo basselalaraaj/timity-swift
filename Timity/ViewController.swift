@@ -58,11 +58,51 @@ class TaskTableViewCell: NSTableCellView {
     }
 }
 
+struct Task {
+    var title: String
+    var project: String
+    var description: String
+}
+
+protocol AddTaskDelegate {
+    func addTask(task: Task)
+}
+
+class AddTaskViewController: NSViewController {
+    var delegate: AddTaskDelegate?
+    
+    @IBOutlet weak var taskProject: NSTextField!
+    @IBOutlet weak var taskTitle: NSTextField!
+    @IBOutlet weak var taskDescription: NSTextField!
+    
+    @IBAction func addNewTask(_ sender: Any) {
+        handleDone()
+    }
+    
+    @objc func handleDone(){
+        let task = Task(title: taskTitle.stringValue, project: taskProject.stringValue,description: taskDescription.stringValue)
+        delegate?.addTask(task: task)
+    }
+
+
+}
+
 class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     @IBOutlet weak var taskTable: NSTableView!
+    @IBOutlet weak var addTaskButton: NSButton!
+    let addTaskPopoverView = NSPopover()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func handleAddTask(_ sender: Any) {
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateController(withIdentifier: "AddTask") as! AddTaskViewController
+        vc.delegate = self
+        addTaskPopoverView.contentViewController = vc
+        addTaskPopoverView.behavior = .transient
+        addTaskPopoverView.show(relativeTo: addTaskButton.bounds, of: addTaskButton, preferredEdge: .minX)
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -103,3 +143,16 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
 
 }
 
+extension ViewController: AddTaskDelegate{
+    func addTask(task: Task) {
+        let task = [
+            "title" : task.title,
+            "description" : task.description,
+            "project" : task.project,
+            "duration": 0,
+            ] as [String : Any]
+        list.append(task)
+        self.taskTable.reloadData()
+        self.addTaskPopoverView.close()
+    }
+}
