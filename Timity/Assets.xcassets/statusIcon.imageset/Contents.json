@@ -2,17 +2,83 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "timity-icon_18px_black.png",
+      "filename" : "timity-icon_18px_black-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "timity-icon_36px_black.png",
+      "filename" : "timity-icon_18px_black.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "timity-icon_18px_white.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "timity-icon_128px_black-2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "timity-icon_128px_black.png",
+      "filename" : "timity-icon_128px_black-1.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "timity-icon_128px_white.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "timity-icon_512px_black-1.png",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "timity-icon_512px_black.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "timity-icon_512px_white.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
       "scale" : "3x"
     }
   ],

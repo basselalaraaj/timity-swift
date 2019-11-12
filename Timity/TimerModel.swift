@@ -23,6 +23,7 @@ class TimerModel {
     public init?(){
         
     }
+
     
     func getTime(time: Int = -1)-> String {
         let timeInit = time >= 0 ? time : duration
