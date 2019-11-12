@@ -90,7 +90,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             
             if(timerModel?.isTimerOn == true && timerModel?.timerId == row) {
                 timerModel?.updateTimerCallback(callBack: cell.updateTimeLabel)
-                cell.taskBgColor.fillColor = hexColor(hexColor: "#ff0000", alpha: 0.5)
+                cell.taskBgColor.fillColor = hexColor(hexColor: list[row]!.color, alpha: 0.5)
                 cell.startStopButton.image = NSImage(named: "NSTouchBarRecordStopTemplate")
             }
         }
