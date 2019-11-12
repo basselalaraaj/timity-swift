@@ -15,6 +15,7 @@ class TaskTableViewCell: NSTableCellView {
     @IBOutlet weak var taskDescription: NSTextField!
     @IBOutlet weak var taskDuration: NSTextField!
     @IBOutlet weak var taskColor: NSBox!
+    @IBOutlet weak var taskBgColor: NSBox!
     @IBOutlet weak var startPauseButton: NSButton!
     
     
@@ -26,19 +27,19 @@ class TaskTableViewCell: NSTableCellView {
     }
     
     @IBAction func stopTimer(_ sender: Any) {
-        taskTitle.textColor = .none
+        taskBgColor.fillColor = hexColor(hexColor: "292930")
         startPauseButton.image = NSImage(named: "NSTouchBarPlayTemplate")
         timerModel?.stopTimer()
     }
     @IBAction func toggleTimer(_ sender: Any) {
         if(timerModel?.isTimerOn == false || (timerModel?.isTimerOnPause == true && timerModel?.timerId == id && list[id!] != nil)) {
             timerModel?.startTimer(id: id!, duration: list[id!]!.duration, callBack: updateTimeLabel)
-            taskTitle.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            taskBgColor.fillColor = hexColor(hexColor: "3EB650")
             startPauseButton.image = NSImage(named: "NSTouchBarPauseTemplate")
         } else {
             if(timerModel?.timerId == id) {
                 timerModel?.pauseTimer()
-                taskTitle.textColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+                taskBgColor.fillColor = hexColor(hexColor: "FCC133")
                 startPauseButton.image = NSImage(named: "NSTouchBarPlayTemplate")
             }
         }

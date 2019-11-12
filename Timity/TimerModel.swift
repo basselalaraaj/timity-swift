@@ -44,7 +44,7 @@ class TimerModel {
             isTimerOnPause = false
             updateTimerCallback(callBack: callBack)
             appDelegate.statusItem.button?.title = self.getTime()
-            appDelegate.statusItem.button?.contentTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            appDelegate.statusItem.button?.contentTintColor = hexColor(hexColor: "3EB650")
         }
     }
     
@@ -65,7 +65,7 @@ class TimerModel {
         if(isTimerOn == true){
             timer.invalidate()
             isTimerOnPause = true
-            appDelegate.statusItem.button?.contentTintColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+            appDelegate.statusItem.button?.contentTintColor = hexColor(hexColor: "FCC133")
         }
     }
     

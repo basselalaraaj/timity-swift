@@ -824,6 +824,13 @@
                                                             <rect key="frame" x="1" y="1" width="307" height="70"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
+                                                                <box misplaced="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="0PF-LG-9Ve">
+                                                                    <rect key="frame" x="-3" y="-4" width="314" height="77"/>
+                                                                    <view key="contentView" id="Hpt-Tb-NS0">
+                                                                        <rect key="frame" x="1" y="1" width="312" height="75"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    </view>
+                                                                </box>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Kho-rU-Avo">
                                                                     <rect key="frame" x="16" y="48" width="200" height="16"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
@@ -882,17 +889,24 @@
                                                                     </connections>
                                                                 </button>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0DV-FH-LLO">
-                                                                    <rect key="frame" x="209" y="27" width="54" height="16"/>
+                                                                    <rect key="frame" x="183" y="24" width="66" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <textFieldCell key="cell" selectable="YES" editable="YES" alignment="center" title="00:00" id="LjC-9M-5L6">
-                                                                        <font key="font" metaFont="system"/>
+                                                                        <font key="font" metaFont="system" size="18"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="0PF-LG-9Ve" firstAttribute="leading" secondItem="u48-SC-KiP" secondAttribute="leading" id="4zV-6p-4Kt"/>
+                                                                <constraint firstItem="0PF-LG-9Ve" firstAttribute="centerX" secondItem="ML5-tj-arb" secondAttribute="centerX" id="URU-qM-gHL"/>
+                                                                <constraint firstItem="0PF-LG-9Ve" firstAttribute="top" secondItem="u48-SC-KiP" secondAttribute="top" id="bQO-qO-w46"/>
+                                                                <constraint firstItem="0PF-LG-9Ve" firstAttribute="bottom" secondItem="u48-SC-KiP" secondAttribute="bottom" id="bQk-HS-Neu"/>
+                                                            </constraints>
                                                             <connections>
                                                                 <outlet property="startPauseButton" destination="YcV-pP-H7B" id="9EP-8k-ePR"/>
+                                                                <outlet property="taskBgColor" destination="0PF-LG-9Ve" id="UeX-Vy-T54"/>
                                                                 <outlet property="taskColor" destination="u48-SC-KiP" id="0EE-dA-Pwb"/>
                                                                 <outlet property="taskDescription" destination="1wC-dq-koJ" id="B3y-ls-Sv9"/>
                                                                 <outlet property="taskDuration" destination="0DV-FH-LLO" id="Uer-D8-XrV"/>

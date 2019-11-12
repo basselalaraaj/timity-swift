@@ -85,16 +85,17 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             cell.taskTitle.stringValue = list[row]!.title
             cell.taskDescription.stringValue = list[row]!.description
             cell.taskColor.fillColor = hexColor(hexColor: list[row]!.color)
+            cell.taskBgColor.fillColor = hexColor(hexColor: "292930")
             cell.taskDuration.stringValue = (timerModel?.getTime(time:list[row]!.duration))!
             cell.id = row
             
             if(timerModel?.isTimerOn == true && timerModel?.timerId == row) {
                 timerModel?.updateTimerCallback(callBack: cell.updateTimeLabel)
                 if(timerModel?.isTimerOnPause == false) {
-                    cell.taskTitle.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+                    cell.taskBgColor.fillColor = hexColor(hexColor: "3EB650")
                     cell.startPauseButton.image = NSImage(named: "NSTouchBarPauseTemplate")
                 } else {
-//                    cell.taskTitle.textColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+                    cell.taskBgColor.fillColor = hexColor(hexColor: "FCC133")
                     cell.startPauseButton.image = NSImage(named: "NSTouchBarPlayTemplate")
                 }
             }
