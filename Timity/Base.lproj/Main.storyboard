@@ -689,8 +689,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="212" height="200"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xN0-PV-kDF">
-                                <rect key="frame" x="20" y="159" width="79" height="21"/>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xN0-PV-kDF">
+                                <rect key="frame" x="20" y="159" width="172" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Project" drawsBackground="YES" id="zG3-ai-sgY">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -702,7 +702,7 @@
                                 <shadow key="shadow">
                                     <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </shadow>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Project Title" drawsBackground="YES" id="TUM-f3-fJq">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Title" drawsBackground="YES" id="TUM-f3-fJq">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -755,20 +755,6 @@
                                     </menu>
                                 </popUpButtonCell>
                             </popUpButton>
-                            <comboBox toolTip="Select a client" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ef2-jm-B8Q">
-                                <rect key="frame" x="99" y="156" width="95" height="25"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Client Name" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="jaE-k0-jBO">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <objectValues>
-                                        <string>Bassel</string>
-                                        <string>Sil</string>
-                                        <string>Test</string>
-                                    </objectValues>
-                                </comboBoxCell>
-                            </comboBox>
                         </subviews>
                         <constraints>
                             <constraint firstItem="lO8-6b-WfJ" firstAttribute="top" secondItem="xN0-PV-kDF" secondAttribute="bottom" constant="10" symbolic="YES" id="GPZ-oe-1GO"/>
