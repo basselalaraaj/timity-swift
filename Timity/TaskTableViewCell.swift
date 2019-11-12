@@ -11,7 +11,6 @@ import Cocoa
 class TaskTableViewCell: NSTableCellView {
     var id: Int? = nil
     @IBOutlet weak var taskProject: NSTextField!
-    @IBOutlet weak var taskTitle: NSTextField!
     @IBOutlet weak var taskDescription: NSTextField!
     @IBOutlet weak var taskDuration: NSTextField!
     @IBOutlet weak var taskColor: NSBox!

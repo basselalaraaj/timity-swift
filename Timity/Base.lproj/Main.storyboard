@@ -686,39 +686,19 @@
             <objects>
                 <viewController storyboardIdentifier="AddTask" id="dYK-7b-T08" customClass="AddTaskViewController" customModule="Timity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="PgR-oM-dcc">
-                        <rect key="frame" x="0.0" y="0.0" width="212" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="212" height="166"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xN0-PV-kDF">
-                                <rect key="frame" x="20" y="159" width="172" height="21"/>
+                                <rect key="frame" x="20" y="125" width="172" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Project" drawsBackground="YES" id="zG3-ai-sgY">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lO8-6b-WfJ">
-                                <rect key="frame" x="20" y="124" width="172" height="21"/>
-                                <shadow key="shadow">
-                                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </shadow>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Title" drawsBackground="YES" id="TUM-f3-fJq">
-                                    <font key="font" usesAppearanceFont="YES"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ECV-iS-kuR">
-                                <rect key="frame" x="20" y="89" width="172" height="21"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Description" drawsBackground="YES" id="Sxa-vB-80A">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t3K-Ng-qd0">
-                                <rect key="frame" x="133" y="47" width="65" height="32"/>
+                                <rect key="frame" x="133" y="13" width="65" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="REx-r2-ZQb">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -728,52 +708,30 @@
                                     <action selector="addNewTask:" target="dYK-7b-T08" id="Rrh-se-SH5"/>
                                 </connections>
                             </button>
-                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C83-Xc-56X">
-                                <rect key="frame" x="18" y="51" width="77" height="25"/>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mKo-45-MBn">
+                                <rect key="frame" x="20" y="49" width="172" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="Color" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="UNt-nT-Tls" id="YL7-Ie-zv8">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Description" drawsBackground="YES" id="Li3-zB-d7v">
                                     <font key="font" metaFont="system"/>
-                                    <menu key="menu" id="Jou-6I-XwL">
-                                        <items>
-                                            <menuItem title="Color" state="on" id="UNt-nT-Tls"/>
-                                            <menuItem title="Red" id="tVr-cQ-ih6"/>
-                                            <menuItem title="Orange" id="BKn-01-Pc1"/>
-                                            <menuItem title="Yellow" id="M20-h7-2hH"/>
-                                            <menuItem title="Lime" id="bIk-B0-ilA"/>
-                                            <menuItem title="Army" id="lxE-2z-XLh"/>
-                                            <menuItem title="Green" id="Rx7-S2-ljB"/>
-                                            <menuItem title="Turquoise" id="Jq3-wY-Nn2"/>
-                                            <menuItem title="Skyblue" id="5gc-zi-FSA"/>
-                                            <menuItem title="Blue" id="BeN-01-n7x"/>
-                                            <menuItem title="Nightblue" id="Obz-qj-Dx1"/>
-                                            <menuItem title="Plum" id="96B-Gb-gBq"/>
-                                            <menuItem title="Purple" id="cKZ-5J-Onh"/>
-                                            <menuItem title="Pink" id="1Jg-A1-ktK"/>
-                                            <menuItem title="Magenta" id="uVg-9c-Rk1"/>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                            </popUpButton>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="lO8-6b-WfJ" firstAttribute="top" secondItem="xN0-PV-kDF" secondAttribute="bottom" constant="10" symbolic="YES" id="GPZ-oe-1GO"/>
-                            <constraint firstItem="xN0-PV-kDF" firstAttribute="trailing" secondItem="lO8-6b-WfJ" secondAttribute="trailing" id="XlO-c0-D8b"/>
                             <constraint firstItem="xN0-PV-kDF" firstAttribute="top" secondItem="PgR-oM-dcc" secondAttribute="top" constant="20" symbolic="YES" id="eTW-5g-lKt"/>
                             <constraint firstItem="xN0-PV-kDF" firstAttribute="leading" secondItem="PgR-oM-dcc" secondAttribute="leading" constant="20" symbolic="YES" id="eoe-cy-Yk4"/>
                             <constraint firstAttribute="trailing" secondItem="xN0-PV-kDF" secondAttribute="trailing" constant="20" symbolic="YES" id="jDc-hz-wGb"/>
-                            <constraint firstItem="xN0-PV-kDF" firstAttribute="leading" secondItem="lO8-6b-WfJ" secondAttribute="leading" id="z8k-iW-hzJ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="taskDescription" destination="ECV-iS-kuR" id="cXG-7z-xHa"/>
+                        <outlet property="taskDescription" destination="mKo-45-MBn" id="ZGa-Hp-Xww"/>
                         <outlet property="taskProject" destination="xN0-PV-kDF" id="oTz-mR-d9F"/>
-                        <outlet property="taskTitle" destination="lO8-6b-WfJ" id="dit-ns-o3A"/>
                     </connections>
                 </viewController>
                 <customObject id="cTA-w8-yx4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="367" y="178"/>
+            <point key="canvasLocation" x="367" y="161"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -816,6 +774,24 @@
                                                                         <rect key="frame" x="1" y="1" width="312" height="75"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
+                                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="1wC-dq-koJ">
+                                                                                <rect key="frame" x="18" y="5" width="183" height="42"/>
+                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <textFieldCell key="cell" alignment="left" title="Description" id="Y1w-6z-2GJ">
+                                                                                    <font key="font" metaFont="message" size="11"/>
+                                                                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                </textFieldCell>
+                                                                            </textField>
+                                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0DV-FH-LLO">
+                                                                                <rect key="frame" x="205" y="28" width="62" height="20"/>
+                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <textFieldCell key="cell" selectable="YES" editable="YES" alignment="right" title="00:00" id="LjC-9M-5L6">
+                                                                                    <font key="font" metaFont="system" size="17"/>
+                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                </textFieldCell>
+                                                                            </textField>
                                                                             <button verticalHuggingPriority="750" id="YcV-pP-H7B">
                                                                                 <rect key="frame" x="262" y="23" width="30" height="30"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -828,11 +804,11 @@
                                                                                     <action selector="toggleTimer:" target="ML5-tj-arb" id="zsQ-Cd-InX"/>
                                                                                 </connections>
                                                                             </button>
-                                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0DV-FH-LLO">
-                                                                                <rect key="frame" x="190" y="27" width="66" height="21"/>
+                                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Kho-rU-Avo">
+                                                                                <rect key="frame" x="18" y="47" width="200" height="20"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
-                                                                                <textFieldCell key="cell" selectable="YES" editable="YES" alignment="right" title="00:00" id="LjC-9M-5L6">
-                                                                                    <font key="font" metaFont="system" size="18"/>
+                                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Project" id="9WS-R8-XHu">
+                                                                                    <font key="font" metaFont="system" size="17"/>
                                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
@@ -840,33 +816,6 @@
                                                                         </subviews>
                                                                     </view>
                                                                 </box>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Kho-rU-Avo">
-                                                                    <rect key="frame" x="16" y="48" width="200" height="16"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Project" id="9WS-R8-XHu">
-                                                                        <font key="font" metaFont="message" size="11"/>
-                                                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0BW-uT-kuc">
-                                                                    <rect key="frame" x="16" y="22" width="200" height="29"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                    <textFieldCell key="cell" alignment="left" title="Title" id="E6A-3B-RNq">
-                                                                        <font key="font" metaFont="system" size="25"/>
-                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="1wC-dq-koJ">
-                                                                    <rect key="frame" x="16" y="6" width="307" height="16"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Description" id="Y1w-6z-2GJ">
-                                                                        <font key="font" metaFont="message" size="11"/>
-                                                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
                                                                 <box boxType="custom" borderType="none" borderWidth="4" title="Box" titlePosition="aboveTop" id="u48-SC-KiP">
                                                                     <rect key="frame" x="-3" y="-4" width="13" height="77"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -889,7 +838,6 @@
                                                                 <outlet property="taskDescription" destination="1wC-dq-koJ" id="B3y-ls-Sv9"/>
                                                                 <outlet property="taskDuration" destination="0DV-FH-LLO" id="Uer-D8-XrV"/>
                                                                 <outlet property="taskProject" destination="Kho-rU-Avo" id="ZIg-sJ-gpd"/>
-                                                                <outlet property="taskTitle" destination="0BW-uT-kuc" id="tDp-TR-Oxd"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
@@ -952,7 +900,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10" y="327.5"/>
+            <point key="canvasLocation" x="-10.5" y="327.5"/>
         </scene>
     </scenes>
     <resources>
