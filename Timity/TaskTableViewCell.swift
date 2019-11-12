@@ -34,12 +34,12 @@ class TaskTableViewCell: NSTableCellView {
     @IBAction func toggleTimer(_ sender: Any) {
         if(timerModel?.isTimerOn == false || (timerModel?.isTimerOnPause == true && timerModel?.timerId == id && list[id!] != nil)) {
             timerModel?.startTimer(id: id!, duration: list[id!]!.duration, callBack: updateTimeLabel)
-            taskBgColor.fillColor = hexColor(hexColor: "3EB650")
+            taskBgColor.fillColor = hexColor(hexColor: "3EB650", alpha: 0.2)
             startPauseButton.image = NSImage(named: "NSTouchBarPauseTemplate")
         } else {
             if(timerModel?.timerId == id) {
                 timerModel?.pauseTimer()
-                taskBgColor.fillColor = hexColor(hexColor: "FCC133")
+                taskBgColor.fillColor = hexColor(hexColor: "FCC133", alpha: 0.2)
                 startPauseButton.image = NSImage(named: "NSTouchBarPlayTemplate")
             }
         }

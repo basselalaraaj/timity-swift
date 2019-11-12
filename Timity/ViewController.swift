@@ -92,10 +92,10 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             if(timerModel?.isTimerOn == true && timerModel?.timerId == row) {
                 timerModel?.updateTimerCallback(callBack: cell.updateTimeLabel)
                 if(timerModel?.isTimerOnPause == false) {
-                    cell.taskBgColor.fillColor = hexColor(hexColor: "3EB650")
+                    cell.taskBgColor.fillColor = hexColor(hexColor: "3EB650", alpha: 0.2)
                     cell.startPauseButton.image = NSImage(named: "NSTouchBarPauseTemplate")
                 } else {
-                    cell.taskBgColor.fillColor = hexColor(hexColor: "FCC133")
+                    cell.taskBgColor.fillColor = hexColor(hexColor: "FCC133", alpha: 0.2)
                     cell.startPauseButton.image = NSImage(named: "NSTouchBarPlayTemplate")
                 }
             }
@@ -121,7 +121,7 @@ extension ViewController: AddTaskDelegate{
     }
 }
 
-func hexColor (hexColor: String) -> NSColor {
+func hexColor (hexColor: String, alpha: Float = 1) -> NSColor {
     let scannHex = Scanner(string: hexColor)
     var rgbValue: UInt64 = 0
     scannHex.scanLocation = 0
@@ -129,5 +129,5 @@ func hexColor (hexColor: String) -> NSColor {
     let r = (rgbValue & 0xff0000) >> 16
     let g = (rgbValue & 0xff00) >> 8
     let b = rgbValue & 0xff
-    return #colorLiteral(red: Float(CGFloat(r) / 0xff), green: Float(CGFloat(g) / 0xff), blue: Float(CGFloat(b) / 0xff), alpha: 1)
+    return #colorLiteral(red: Float(CGFloat(r) / 0xff), green: Float(CGFloat(g) / 0xff), blue: Float(CGFloat(b) / 0xff), alpha: alpha)
 }
