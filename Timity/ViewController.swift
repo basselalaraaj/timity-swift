@@ -10,6 +10,7 @@ import Cocoa
 
 struct Task {
     var project: String
+    var type: String
     var description: String
     var duration: Int
     var color: String
@@ -33,7 +34,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             return
         }
         
-        let query = #"{ "query": "{tasks{description,project,duration,color}}" }"#
+        let query = #"{ "query": "{tasks{description,type,project,duration,color}}" }"#
         let url = URL(string: "https://api.timity.nl/")!
         var request = URLRequest(url: url)
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
@@ -50,7 +51,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
                     let deserializedTasks = deserialized!["data"]?["tasks"]!
                     for case let result in deserializedTasks! {
                         let item = result as! [String: Any]
-                        list.append(Task(project: item["project"]! as! String, description: item["description"]! as! String, duration: item["duration"]! as! Int, color: item["color"]! as! String))
+                        list.append(Task(project: item["project"]! as! String, type: item["type"]! as! String, description: item["description"]! as! String, duration: item["duration"]! as! Int, color: item["color"]! as! String))
                     }
                     DispatchQueue.main.async {
                         self.taskTable.reloadData()
@@ -79,6 +80,7 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
         
         if (tableColumn?.identifier)!.rawValue == "task" && list[row] != nil {
             cell.taskProject.stringValue = list[row]!.project
+            cell.taskType.stringValue = list[row]!.type
             cell.taskDescription.stringValue = list[row]!.description
             cell.taskColor.fillColor = hexColor(hexColor: list[row]!.color)
             cell.taskDuration.stringValue = (timerModel?.getTime(time:list[row]!.duration))!

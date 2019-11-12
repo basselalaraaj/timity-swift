@@ -686,17 +686,48 @@
             <objects>
                 <viewController storyboardIdentifier="AddTask" id="dYK-7b-T08" customClass="AddTaskViewController" customModule="Timity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="PgR-oM-dcc">
-                        <rect key="frame" x="0.0" y="0.0" width="212" height="166"/>
+                        <rect key="frame" x="0.0" y="0.0" width="212" height="190"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xN0-PV-kDF">
-                                <rect key="frame" x="20" y="125" width="172" height="21"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Project" drawsBackground="YES" id="zG3-ai-sgY">
-                                    <font key="font" usesAppearanceFont="YES"/>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mKo-45-MBn">
+                                <rect key="frame" x="20" y="49" width="172" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Description" drawsBackground="YES" id="Li3-zB-d7v">
+                                    <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FjV-aF-1ow">
+                                <rect key="frame" x="18" y="146" width="177" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="Project Blue Book" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="BfS-GP-JQQ" id="ZUS-BQ-zXC">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <menu key="menu" id="ZK8-Cd-PgB">
+                                        <items>
+                                            <menuItem title="Project Blue Book" state="on" id="BfS-GP-JQQ"/>
+                                            <menuItem title="Code Talkers" id="iQG-uG-b5m"/>
+                                            <menuItem title="X Lab" id="dwi-0t-mH6"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FaU-Qq-CCI">
+                                <rect key="frame" x="18" y="120" width="177" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="Programming" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="umQ-rz-487" id="Dvj-BJ-1j5">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <menu key="menu" id="UE4-dj-YjW">
+                                        <items>
+                                            <menuItem title="Programming" state="on" id="umQ-rz-487"/>
+                                            <menuItem title="Meeting" id="Jge-ho-PbD"/>
+                                            <menuItem title="Research" id="spT-eN-XIn"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t3K-Ng-qd0">
                                 <rect key="frame" x="133" y="13" width="65" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -708,30 +739,17 @@
                                     <action selector="addNewTask:" target="dYK-7b-T08" id="Rrh-se-SH5"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mKo-45-MBn">
-                                <rect key="frame" x="20" y="49" width="172" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Description" drawsBackground="YES" id="Li3-zB-d7v">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="xN0-PV-kDF" firstAttribute="top" secondItem="PgR-oM-dcc" secondAttribute="top" constant="20" symbolic="YES" id="eTW-5g-lKt"/>
-                            <constraint firstItem="xN0-PV-kDF" firstAttribute="leading" secondItem="PgR-oM-dcc" secondAttribute="leading" constant="20" symbolic="YES" id="eoe-cy-Yk4"/>
-                            <constraint firstAttribute="trailing" secondItem="xN0-PV-kDF" secondAttribute="trailing" constant="20" symbolic="YES" id="jDc-hz-wGb"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="taskDescription" destination="mKo-45-MBn" id="ZGa-Hp-Xww"/>
-                        <outlet property="taskProject" destination="xN0-PV-kDF" id="oTz-mR-d9F"/>
+                        <outlet property="taskProject" destination="FjV-aF-1ow" id="etP-qD-1mQ"/>
+                        <outlet property="taskType" destination="FaU-Qq-CCI" id="a8O-GA-t0A"/>
                     </connections>
                 </viewController>
                 <customObject id="cTA-w8-yx4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="367" y="161"/>
+            <point key="canvasLocation" x="367" y="173"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -774,10 +792,19 @@
                                                                         <rect key="frame" x="1" y="1" width="312" height="75"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
-                                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="1wC-dq-koJ">
-                                                                                <rect key="frame" x="18" y="5" width="183" height="42"/>
+                                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Kho-rU-Avo">
+                                                                                <rect key="frame" x="18" y="47" width="200" height="20"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
-                                                                                <textFieldCell key="cell" alignment="left" title="Description" id="Y1w-6z-2GJ">
+                                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Project" id="9WS-R8-XHu">
+                                                                                    <font key="font" metaFont="system" size="17"/>
+                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                </textFieldCell>
+                                                                            </textField>
+                                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="QzP-9U-nfo">
+                                                                                <rect key="frame" x="18" y="30" width="110" height="14"/>
+                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Type" id="P4m-gE-E6o">
                                                                                     <font key="font" metaFont="message" size="11"/>
                                                                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -804,12 +831,12 @@
                                                                                     <action selector="toggleTimer:" target="ML5-tj-arb" id="zsQ-Cd-InX"/>
                                                                                 </connections>
                                                                             </button>
-                                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Kho-rU-Avo">
-                                                                                <rect key="frame" x="18" y="47" width="200" height="20"/>
+                                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="1wC-dq-koJ">
+                                                                                <rect key="frame" x="18" y="0.0" width="288" height="26"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
-                                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Project" id="9WS-R8-XHu">
-                                                                                    <font key="font" metaFont="system" size="17"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="left" title="Description" id="Y1w-6z-2GJ">
+                                                                                    <font key="font" metaFont="menu" size="11"/>
+                                                                                    <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -838,6 +865,7 @@
                                                                 <outlet property="taskDescription" destination="1wC-dq-koJ" id="B3y-ls-Sv9"/>
                                                                 <outlet property="taskDuration" destination="0DV-FH-LLO" id="Uer-D8-XrV"/>
                                                                 <outlet property="taskProject" destination="Kho-rU-Avo" id="ZIg-sJ-gpd"/>
+                                                                <outlet property="taskType" destination="QzP-9U-nfo" id="zW9-fN-QQV"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
