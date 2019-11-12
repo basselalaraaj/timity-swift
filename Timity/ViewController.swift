@@ -91,13 +91,8 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             
             if(timerModel?.isTimerOn == true && timerModel?.timerId == row) {
                 timerModel?.updateTimerCallback(callBack: cell.updateTimeLabel)
-                if(timerModel?.isTimerOnPause == false) {
-                    cell.taskBgColor.fillColor = hexColor(hexColor: "3EB650", alpha: 0.2)
-                    cell.startPauseButton.image = NSImage(named: "NSTouchBarPauseTemplate")
-                } else {
-                    cell.taskBgColor.fillColor = hexColor(hexColor: "FCC133", alpha: 0.2)
-                    cell.startPauseButton.image = NSImage(named: "NSTouchBarPlayTemplate")
-                }
+                cell.taskBgColor.fillColor = hexColor(hexColor: "3EB650", alpha: 0.2)
+                cell.startStopButton.image = NSImage(named: "NSTouchBarRecordStopTemplate")
             }
         }
         

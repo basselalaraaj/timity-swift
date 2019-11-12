@@ -18,7 +18,6 @@ class TimerModel {
     var timerCallback : (() -> Void)?
     
     var isTimerOn = false
-    var isTimerOnPause = false
     
     
     public init?(){
@@ -36,12 +35,11 @@ class TimerModel {
     }
     
     func startTimer(id: Int, duration: Int, callBack: (() -> Void)?) {
-        if(isTimerOn == false || isTimerOnPause == true){
+        if(isTimerOn == false){
             timerId = id
             self.duration = duration
             timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: updateTimer(timer:))
             isTimerOn = true
-            isTimerOnPause = false
             updateTimerCallback(callBack: callBack)
             appDelegate.statusItem.button?.title = self.getTime()
             appDelegate.statusItem.button?.contentTintColor = hexColor(hexColor: "3EB650")
@@ -53,19 +51,10 @@ class TimerModel {
     func stopTimer() {
         if(isTimerOn == true){
             timer.invalidate()
-            isTimerOnPause = false
             isTimerOn = false
             duration = 0
             appDelegate.statusItem.button?.title = getTime()
             appDelegate.statusItem.button?.contentTintColor = .none
-        }
-    }
-    
-    func pauseTimer() {
-        if(isTimerOn == true){
-            timer.invalidate()
-            isTimerOnPause = true
-            appDelegate.statusItem.button?.contentTintColor = hexColor(hexColor: "FCC133")
         }
     }
     

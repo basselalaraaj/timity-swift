@@ -756,7 +756,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <comboBox toolTip="Select a client" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ef2-jm-B8Q">
-                                <rect key="frame" x="99" y="156" width="96" height="25"/>
+                                <rect key="frame" x="99" y="156" width="95" height="25"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Client Name" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="jaE-k0-jBO">
                                     <font key="font" metaFont="system"/>
@@ -829,6 +829,29 @@
                                                                     <view key="contentView" id="Hpt-Tb-NS0">
                                                                         <rect key="frame" x="1" y="1" width="312" height="75"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                        <subviews>
+                                                                            <button verticalHuggingPriority="750" id="YcV-pP-H7B">
+                                                                                <rect key="frame" x="262" y="23" width="30" height="30"/>
+                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                <buttonCell key="cell" type="bevel" bezelStyle="circular" image="NSTouchBarPlayTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="jaN-pP-U1m">
+                                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                                    <font key="font" metaFont="system"/>
+                                                                                </buttonCell>
+                                                                                <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                <connections>
+                                                                                    <action selector="toggleTimer:" target="ML5-tj-arb" id="zsQ-Cd-InX"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0DV-FH-LLO">
+                                                                                <rect key="frame" x="190" y="27" width="66" height="21"/>
+                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <textFieldCell key="cell" selectable="YES" editable="YES" alignment="right" title="00:00" id="LjC-9M-5L6">
+                                                                                    <font key="font" metaFont="system" size="18"/>
+                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                </textFieldCell>
+                                                                            </textField>
+                                                                        </subviews>
                                                                     </view>
                                                                 </box>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Kho-rU-Avo">
@@ -866,39 +889,6 @@
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     </view>
                                                                 </box>
-                                                                <button verticalHuggingPriority="750" id="G98-DE-1Qw" userLabel="Stop button">
-                                                                    <rect key="frame" x="269" y="24" width="29" height="21"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSTouchBarRecordStopTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="UuH-an-mdh">
-                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                        <font key="font" metaFont="system"/>
-                                                                    </buttonCell>
-                                                                    <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                    <connections>
-                                                                        <action selector="stopTimer:" target="ML5-tj-arb" id="CDz-0d-HAt"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button verticalHuggingPriority="750" id="YcV-pP-H7B">
-                                                                    <rect key="frame" x="255" y="24" width="24" height="21"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSTouchBarPlayTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="jaN-pP-U1m">
-                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                        <font key="font" metaFont="system"/>
-                                                                    </buttonCell>
-                                                                    <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                    <connections>
-                                                                        <action selector="toggleTimer:" target="ML5-tj-arb" id="zsQ-Cd-InX"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0DV-FH-LLO">
-                                                                    <rect key="frame" x="183" y="24" width="66" height="21"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                    <textFieldCell key="cell" selectable="YES" editable="YES" alignment="center" title="00:00" id="LjC-9M-5L6">
-                                                                        <font key="font" metaFont="system" size="18"/>
-                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="0PF-LG-9Ve" firstAttribute="leading" secondItem="u48-SC-KiP" secondAttribute="leading" id="4zV-6p-4Kt"/>
@@ -907,7 +897,7 @@
                                                                 <constraint firstItem="0PF-LG-9Ve" firstAttribute="bottom" secondItem="u48-SC-KiP" secondAttribute="bottom" id="bQk-HS-Neu"/>
                                                             </constraints>
                                                             <connections>
-                                                                <outlet property="startPauseButton" destination="YcV-pP-H7B" id="9EP-8k-ePR"/>
+                                                                <outlet property="startStopButton" destination="YcV-pP-H7B" id="cyw-ij-fQ5"/>
                                                                 <outlet property="taskBgColor" destination="0PF-LG-9Ve" id="UeX-Vy-T54"/>
                                                                 <outlet property="taskColor" destination="u48-SC-KiP" id="0EE-dA-Pwb"/>
                                                                 <outlet property="taskDescription" destination="1wC-dq-koJ" id="B3y-ls-Sv9"/>
@@ -984,6 +974,5 @@
         <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSSmartBadgeTemplate" width="14" height="14"/>
         <image name="NSTouchBarPlayTemplate" width="14" height="30"/>
-        <image name="NSTouchBarRecordStopTemplate" width="12" height="30"/>
     </resources>
 </document>
