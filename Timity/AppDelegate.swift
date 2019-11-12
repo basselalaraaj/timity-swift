@@ -16,6 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let icon = NSImage(named: "statusIcon")
         icon?.isTemplate = true
         statusItem.button?.image = icon
+        
         statusItem.button?.imagePosition = NSControl.ImagePosition.imageLeft
         statusItem.button?.title = String(timerModel!.getTime())
         statusItem.button?.target = self
