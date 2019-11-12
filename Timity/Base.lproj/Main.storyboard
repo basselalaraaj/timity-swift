@@ -794,24 +794,24 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="XfG-lQ-9wD" customClass="ViewController" customModule="Timity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="310" height="437"/>
+                        <rect key="frame" x="0.0" y="0.0" width="311" height="437"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="72" horizontalPageScroll="10" verticalLineScroll="72" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" verticalScrollElasticity="allowed" translatesAutoresizingMaskIntoConstraints="NO" id="10p-QH-L0D">
-                                <rect key="frame" x="0.0" y="37" width="310" height="400"/>
+                                <rect key="frame" x="0.0" y="37" width="311" height="400"/>
                                 <clipView key="contentView" drawsBackground="NO" id="IQD-vC-bzo">
-                                    <rect key="frame" x="0.0" y="0.0" width="310" height="400"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="311" height="400"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="70" viewBased="YES" id="Kkz-E8-obG">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="400"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="311" height="400"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
-                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <tableViewGridLines key="gridStyleMask" horizontal="YES"/>
-                                            <color key="gridColor" name="quaternaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <tableColumns>
-                                                <tableColumn identifier="task" width="307" minWidth="70" maxWidth="1000" id="4Dt-mZ-rhn" colorLabel="IBBuiltInLabel-Orange">
+                                                <tableColumn identifier="task" width="308" minWidth="70" maxWidth="1000" id="4Dt-mZ-rhn" colorLabel="IBBuiltInLabel-Orange">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Timity Timers">
                                                         <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -821,10 +821,10 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="TaskCell" id="ML5-tj-arb" customClass="TaskTableViewCell" customModule="Timity" customModuleProvider="target">
-                                                            <rect key="frame" x="1" y="1" width="307" height="70"/>
+                                                            <rect key="frame" x="1" y="1" width="308" height="70"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <box misplaced="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="0PF-LG-9Ve">
+                                                                <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="0PF-LG-9Ve">
                                                                     <rect key="frame" x="-3" y="-4" width="314" height="77"/>
                                                                     <view key="contentView" id="Hpt-Tb-NS0">
                                                                         <rect key="frame" x="1" y="1" width="312" height="75"/>
@@ -916,7 +916,6 @@
                                             </connections>
                                         </tableView>
                                     </subviews>
-                                    <nil key="backgroundColor"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Yra-AI-5WX">
                                     <rect key="frame" x="-100" y="-100" width="223" height="15"/>
@@ -928,7 +927,7 @@
                                 </scroller>
                             </scrollView>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="5QJ-hc-QoH">
-                                <rect key="frame" x="0.0" y="33" width="393" height="5"/>
+                                <rect key="frame" x="0.0" y="33" width="394" height="5"/>
                             </box>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Qc-eE-Rd8">
                                 <rect key="frame" x="7" y="7" width="28" height="21"/>
