@@ -701,31 +701,19 @@
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FjV-aF-1ow">
                                 <rect key="frame" x="18" y="146" width="177" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="Project Blue Book" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="BfS-GP-JQQ" id="ZUS-BQ-zXC">
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="ZUS-BQ-zXC">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
-                                    <menu key="menu" id="ZK8-Cd-PgB">
-                                        <items>
-                                            <menuItem title="Project Blue Book" state="on" id="BfS-GP-JQQ"/>
-                                            <menuItem title="Code Talkers" id="iQG-uG-b5m"/>
-                                            <menuItem title="X Lab" id="dwi-0t-mH6"/>
-                                        </items>
-                                    </menu>
+                                    <menu key="menu" id="ZK8-Cd-PgB"/>
                                 </popUpButtonCell>
                             </popUpButton>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FaU-Qq-CCI">
                                 <rect key="frame" x="18" y="120" width="177" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="Programming" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="umQ-rz-487" id="Dvj-BJ-1j5">
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="Dvj-BJ-1j5">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
-                                    <menu key="menu" id="UE4-dj-YjW">
-                                        <items>
-                                            <menuItem title="Programming" state="on" id="umQ-rz-487"/>
-                                            <menuItem title="Meeting" id="Jge-ho-PbD"/>
-                                            <menuItem title="Research" id="spT-eN-XIn"/>
-                                        </items>
-                                    </menu>
+                                    <menu key="menu" id="UE4-dj-YjW"/>
                                 </popUpButtonCell>
                             </popUpButton>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t3K-Ng-qd0">
@@ -775,7 +763,7 @@
                                             <tableColumns>
                                                 <tableColumn identifier="task" width="308" minWidth="70" maxWidth="1000" id="4Dt-mZ-rhn" colorLabel="IBBuiltInLabel-Orange">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Timity Timers">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="label" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -805,7 +793,7 @@
                                                                                 <rect key="frame" x="18" y="30" width="110" height="14"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Type" id="P4m-gE-E6o">
-                                                                                    <font key="font" metaFont="message" size="11"/>
+                                                                                    <font key="font" metaFont="label" size="11"/>
                                                                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
@@ -835,7 +823,7 @@
                                                                                 <rect key="frame" x="18" y="0.0" width="288" height="26"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="left" title="Description" id="Y1w-6z-2GJ">
-                                                                                    <font key="font" metaFont="menu" size="11"/>
+                                                                                    <font key="font" metaFont="label" size="11"/>
                                                                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>

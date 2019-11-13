@@ -9,6 +9,7 @@
 import Cocoa
 
 struct Task {
+    var id: String
     var project: String
     var type: String
     var description: String
@@ -21,6 +22,8 @@ protocol AddTaskDelegate {
 }
 
 var list: [Task?] = []
+var userId = 1
+let apiUrl = URL(string: "https://api.timity.nl/")!
 
 class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     @IBOutlet weak var taskTable: NSTableView!
@@ -29,14 +32,8 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if(list.count > 0) {
-            return
-        }
-        
-        let query = #"{ "query": "{tasks{description,type,project,duration,color}}" }"#
-        let url = URL(string: "https://api.timity.nl/")!
-        var request = URLRequest(url: url)
+        let query = #"{ "query": "{ tasks(userId:\#(userId)){ uuid description duration taskType { title } project {title color}}}" }"#
+        var request = URLRequest(url: apiUrl)
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
@@ -49,9 +46,13 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
                 if let data = data, let _ = String(data: data, encoding: .utf8) {
                     let deserialized = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: [String: [Any]]]
                     let deserializedTasks = deserialized!["data"]?["tasks"]!
+                    list = []
                     for case let result in deserializedTasks! {
                         let item = result as! [String: Any]
-                        list.append(Task(project: item["project"]! as! String, type: item["type"]! as! String, description: item["description"]! as! String, duration: item["duration"]! as! Int, color: item["color"]! as! String))
+                        let project = item["project"]! as! [String: Any]
+                        let taskType = item["taskType"]! as! [String: Any]
+                        
+                        list.append(Task(id: item["uuid"]! as! String, project: project["title"]! as! String, type: taskType["title"]! as! String, description: item["description"]! as! String, duration: item["duration"]! as! Int, color: project["color"]! as! String))
                     }
                     DispatchQueue.main.async {
                         self.taskTable.reloadData()
@@ -84,13 +85,18 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
             cell.taskDescription.stringValue = list[row]!.description
             cell.taskColor.fillColor = hexColor(hexColor: list[row]!.color)
             cell.taskDuration.stringValue = (timerModel?.getTime(time:list[row]!.duration))!
+            cell.taskBgColor.fillColor = .clear
+            cell.startStopButton.image = NSImage(named: "NSTouchBarPlayTemplate")
             cell.id = row
             
-            if(timerModel?.isTimerOn == true && timerModel?.timerId == row) {
+            if(timerModel?.isTimerOn == true && timerModel?.timerId == list[row]!.id) {
                 timerModel?.updateTimerCallback(callBack: cell.updateTimeLabel)
                 cell.taskBgColor.fillColor = hexColor(hexColor: list[row]!.color, alpha: 0.5)
+                cell.taskDuration.stringValue = (timerModel?.getTime())!
                 cell.startStopButton.image = NSImage(named: "NSTouchBarRecordStopTemplate")
             }
+            
+            print(cell.taskDescription.stringValue, cell.taskBgColor.fillColor)
         }
         
         return cell
@@ -107,9 +113,20 @@ class ViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSour
 
 extension ViewController: AddTaskDelegate{
     func addTask(task: Task) {
-        list.append(task)
-        self.taskTable.reloadData()
-        self.addTaskPopoverView.close()
+        let query = #"{"query": "mutation{createTask(description:\"\#(task.description)\", duration:\"\#(task.duration)\", userId: \#(userId), projectId: \#(task.project), taskTypeId:\#(task.type)){task{ uuid }}}"}"#
+        var request = URLRequest(url: apiUrl)
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+        request.httpMethod = "POST"
+        request.httpBody = query.data(using: String.Encoding.utf8)
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                self.loadView()
+                self.addTaskPopoverView.close()
+            }
+        }
+        task.resume()
     }
 }
 

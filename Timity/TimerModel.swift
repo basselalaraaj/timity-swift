@@ -13,7 +13,7 @@ class TimerModel {
     
     var timer = Timer()
     
-    var timerId: Int? = nil
+    var timerId: String? = nil
     var duration = 0
     var timerCallback : (() -> Void)?
     
@@ -35,7 +35,7 @@ class TimerModel {
       return (seconds / 3600, (seconds % 3600) / 60)
     }
     
-    func startTimer(id: Int, duration: Int, callBack: (() -> Void)?) {
+    func startTimer(id: String, duration: Int, callBack: (() -> Void)?) {
         if(isTimerOn == false){
             timerId = id
             self.duration = duration

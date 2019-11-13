@@ -28,12 +28,12 @@ class TaskTableViewCell: NSTableCellView {
 
     @IBAction func toggleTimer(_ sender: Any) {
         if(timerModel?.isTimerOn == false && list[id!] != nil) {
-            timerModel?.startTimer(id: id!, duration: list[id!]!.duration, callBack: updateTimeLabel)
+            timerModel?.startTimer(id: list[id!]!.id, duration: list[id!]!.duration, callBack: updateTimeLabel)
             taskBgColor.fillColor = hexColor(hexColor: list[id!]!.color, alpha: 0.25)
             startStopButton.image = NSImage(named: "NSTouchBarRecordStopTemplate")
       
         } else {
-            if(timerModel?.timerId == id) {
+            if(timerModel?.timerId == list[id!]!.id) {
                 timerModel?.stopTimer()
                 taskBgColor.fillColor = hexColor(hexColor: "000000")
                 startStopButton.image = NSImage(named: "NSTouchBarPlayTemplate")
