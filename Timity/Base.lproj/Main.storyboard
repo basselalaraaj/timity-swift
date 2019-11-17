@@ -748,18 +748,18 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KgD-GE-DM7">
-                                <rect key="frame" x="40" y="40" width="231" height="103"/>
+                                <rect key="frame" x="40" y="23" width="231" height="138"/>
                                 <subviews>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Ue-TK-xYd">
-                                        <rect key="frame" x="0.0" y="82" width="231" height="21"/>
+                                        <rect key="frame" x="0.0" y="117" width="231" height="21"/>
                                         <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Username" drawsBackground="YES" id="8vU-a2-qu3">
                                             <font key="font" usesAppearanceFont="YES"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WNm-ue-f4h">
-                                        <rect key="frame" x="0.0" y="41" width="231" height="21"/>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WNm-ue-f4h" customClass="NSSecureTextField">
+                                        <rect key="frame" x="0.0" y="76" width="231" height="21"/>
                                         <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" id="hAB-IV-rQC">
                                             <font key="font" usesAppearanceFont="YES"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -767,7 +767,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AYf-tK-hou">
-                                        <rect key="frame" x="-6" y="-7" width="243" height="32"/>
+                                        <rect key="frame" x="-6" y="28" width="243" height="32"/>
                                         <buttonCell key="cell" type="push" title="Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4F7-dj-KhJ">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -776,9 +776,20 @@
                                             <action selector="login:" target="jl1-y1-22g" id="Hdj-7K-hvO"/>
                                         </connections>
                                     </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hjm-Wd-Lgt">
+                                        <rect key="frame" x="0.0" y="0.0" width="231" height="15"/>
+                                        <buttonCell key="cell" type="recessed" title="Sign up" bezelStyle="recessed" alignment="center" imageScaling="proportionallyDown" inset="2" id="x6D-PY-cnU">
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                            <font key="font" metaFont="systemBold" size="12"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="signup:" target="jl1-y1-22g" id="eTy-CM-FDg"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="6Ue-TK-xYd" secondAttribute="trailing" id="02I-fl-Iwg"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hjm-Wd-Lgt" secondAttribute="trailing" id="BdY-1t-clj"/>
                                     <constraint firstItem="6Ue-TK-xYd" firstAttribute="trailing" secondItem="WNm-ue-f4h" secondAttribute="trailing" id="jgS-pQ-iEQ"/>
                                     <constraint firstItem="WNm-ue-f4h" firstAttribute="trailing" secondItem="AYf-tK-hou" secondAttribute="trailing" id="l2l-50-1ml"/>
                                 </constraints>
@@ -786,8 +797,10 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -983,6 +996,84 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-10.5" y="327.5"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="hff-TE-nL0">
+            <objects>
+                <viewController storyboardIdentifier="SignUpViewController" id="FGQ-5w-8QP" customClass="SignUpViewController" customModule="Timity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="PNl-xt-CO0">
+                        <rect key="frame" x="0.0" y="0.0" width="311" height="224"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vMP-qZ-Cdk">
+                                <rect key="frame" x="40" y="40" width="231" height="144"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qYY-Sb-wLm">
+                                        <rect key="frame" x="0.0" y="123" width="231" height="21"/>
+                                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Email" drawsBackground="YES" id="d65-ft-2GJ">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vp7-5l-u0o">
+                                        <rect key="frame" x="0.0" y="82" width="231" height="21"/>
+                                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Username" drawsBackground="YES" id="txM-u1-ldq">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Ba-dr-NTV" customClass="NSSecureTextField">
+                                        <rect key="frame" x="0.0" y="41" width="231" height="21"/>
+                                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" id="IcZ-EE-CMp">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dbe-Sx-JY0">
+                                        <rect key="frame" x="-6" y="-7" width="243" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Sign up" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wFV-hh-IXN">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="login:" target="FGQ-5w-8QP" id="xar-Sx-jpy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qYY-Sb-wLm" secondAttribute="trailing" id="5Uw-aT-ZkF"/>
+                                    <constraint firstItem="4Ba-dr-NTV" firstAttribute="trailing" secondItem="dbe-Sx-JY0" secondAttribute="trailing" id="f6g-kH-Hhe"/>
+                                    <constraint firstItem="qYY-Sb-wLm" firstAttribute="trailing" secondItem="4Ba-dr-NTV" secondAttribute="trailing" id="rD2-Jc-DcR"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="vMP-qZ-Cdk" secondAttribute="bottom" constant="40" id="Pe6-Mu-NPI"/>
+                            <constraint firstItem="vMP-qZ-Cdk" firstAttribute="leading" secondItem="PNl-xt-CO0" secondAttribute="leading" constant="40" id="Xqg-Pe-hxc"/>
+                            <constraint firstItem="vMP-qZ-Cdk" firstAttribute="centerX" secondItem="PNl-xt-CO0" secondAttribute="centerX" id="bau-MX-Zux"/>
+                            <constraint firstItem="vMP-qZ-Cdk" firstAttribute="centerY" secondItem="PNl-xt-CO0" secondAttribute="centerY" id="xXE-qA-vxh"/>
+                            <constraint firstItem="vMP-qZ-Cdk" firstAttribute="top" secondItem="PNl-xt-CO0" secondAttribute="top" constant="40" id="zIq-uS-Svs"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="qUf-tN-X6B" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-357" y="81"/>
         </scene>
     </scenes>
     <resources>

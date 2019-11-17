@@ -1,5 +1,4 @@
 //
-//  ViewController.swift
 //  Timity
 //
 //  Created by Bassel Al Araaj on 08/11/2019.
@@ -12,6 +11,12 @@ class LoginViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    @IBAction func signup(_ sender: Any) {
+        let signUpViewController = storyboard?.instantiateController(withIdentifier: "SignUpViewController") as? SignUpViewController
+        NSApp.keyWindow?.contentViewController = signUpViewController
+        NSApp.keyWindow?.makeKeyAndOrderFront(signUpViewController)
     }
     
     @IBAction func login(_ sender: Any) {
