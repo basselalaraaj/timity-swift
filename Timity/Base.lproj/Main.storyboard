@@ -739,6 +739,72 @@
             </objects>
             <point key="canvasLocation" x="367" y="173"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="L4q-Tp-ibu">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="jl1-y1-22g" customClass="LoginViewController" customModule="Timity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="2Ln-Yj-jX0">
+                        <rect key="frame" x="0.0" y="0.0" width="311" height="183"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KgD-GE-DM7">
+                                <rect key="frame" x="40" y="40" width="231" height="103"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Ue-TK-xYd">
+                                        <rect key="frame" x="0.0" y="82" width="231" height="21"/>
+                                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Username" drawsBackground="YES" id="8vU-a2-qu3">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WNm-ue-f4h">
+                                        <rect key="frame" x="0.0" y="41" width="231" height="21"/>
+                                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" id="hAB-IV-rQC">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AYf-tK-hou">
+                                        <rect key="frame" x="-6" y="-7" width="243" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4F7-dj-KhJ">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="login:" target="jl1-y1-22g" id="Hdj-7K-hvO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="6Ue-TK-xYd" secondAttribute="trailing" id="02I-fl-Iwg"/>
+                                    <constraint firstItem="6Ue-TK-xYd" firstAttribute="trailing" secondItem="WNm-ue-f4h" secondAttribute="trailing" id="jgS-pQ-iEQ"/>
+                                    <constraint firstItem="WNm-ue-f4h" firstAttribute="trailing" secondItem="AYf-tK-hou" secondAttribute="trailing" id="l2l-50-1ml"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="KgD-GE-DM7" firstAttribute="leading" secondItem="2Ln-Yj-jX0" secondAttribute="leading" constant="40" id="8ob-8b-rFc"/>
+                            <constraint firstItem="KgD-GE-DM7" firstAttribute="centerY" secondItem="2Ln-Yj-jX0" secondAttribute="centerY" id="Ohg-1h-Zz3"/>
+                            <constraint firstItem="KgD-GE-DM7" firstAttribute="centerX" secondItem="2Ln-Yj-jX0" secondAttribute="centerX" id="dv8-8E-Vld"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="n83-EU-DwA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-356.5" y="331.5"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
