@@ -28,7 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @objc func showSettings(){
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        guard let vc = storyboard.instantiateController(withIdentifier: "ViewController") as? ViewController else { fatalError("Unable to find ViewController in the storyboard.")}
+        guard let vc = storyboard.instantiateController(withIdentifier: "HomeViewController") as? HomeViewController else { fatalError("Unable to find HomeViewController in the storyboard.")}
         
         guard let button = statusItem.button else {
             fatalError("Couldn't find status item button.")

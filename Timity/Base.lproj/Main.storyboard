@@ -739,10 +739,10 @@
             </objects>
             <point key="canvasLocation" x="367" y="173"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="XfG-lQ-9wD" customClass="ViewController" customModule="Timity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="XfG-lQ-9wD" customClass="HomeViewController" customModule="Timity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="311" height="437"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -763,7 +763,7 @@
                                             <tableColumns>
                                                 <tableColumn identifier="task" width="308" minWidth="70" maxWidth="1000" id="4Dt-mZ-rhn" colorLabel="IBBuiltInLabel-Orange">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Timity Timers">
-                                                        <font key="font" metaFont="label" size="11"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -793,7 +793,7 @@
                                                                                 <rect key="frame" x="18" y="30" width="110" height="14"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Type" id="P4m-gE-E6o">
-                                                                                    <font key="font" metaFont="label" size="11"/>
+                                                                                    <font key="font" metaFont="message" size="11"/>
                                                                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
@@ -823,7 +823,7 @@
                                                                                 <rect key="frame" x="18" y="0.0" width="288" height="26"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="left" title="Description" id="Y1w-6z-2GJ">
-                                                                                    <font key="font" metaFont="label" size="11"/>
+                                                                                    <font key="font" metaFont="message" size="11"/>
                                                                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC03394A23818A2600C46029 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC03394923818A2600C46029 /* HomeViewController.swift */; };
 		FCA3F24B2375D022008F8DE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA3F24A2375D022008F8DE0 /* AppDelegate.swift */; };
-		FCA3F24D2375D022008F8DE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA3F24C2375D022008F8DE0 /* ViewController.swift */; };
 		FCA3F24F2375D024008F8DE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA3F24E2375D024008F8DE0 /* Assets.xcassets */; };
 		FCA3F2522375D024008F8DE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA3F2502375D024008F8DE0 /* Main.storyboard */; };
 		FCB11A8123761D1100DE51DE /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB11A8023761D1100DE51DE /* TimerModel.swift */; };
@@ -17,9 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC03394923818A2600C46029 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FCA3F2472375D022008F8DE0 /* Timity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA3F24A2375D022008F8DE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FCA3F24C2375D022008F8DE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCA3F24E2375D024008F8DE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCA3F2512375D024008F8DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCA3F2532375D024008F8DE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				FCA3F24A2375D022008F8DE0 /* AppDelegate.swift */,
-				FCA3F24C2375D022008F8DE0 /* ViewController.swift */,
+				FC03394923818A2600C46029 /* HomeViewController.swift */,
 				FCB11A8023761D1100DE51DE /* TimerModel.swift */,
 				FCC6A7EE23796E8C0047BD69 /* TaskTableViewCell.swift */,
 				FCC6A7F023796EC80047BD69 /* AddTaskViewController.swift */,
@@ -148,9 +148,9 @@
 			files = (
 				FCC6A7EF23796E8C0047BD69 /* TaskTableViewCell.swift in Sources */,
 				FCB11A8123761D1100DE51DE /* TimerModel.swift in Sources */,
-				FCA3F24D2375D022008F8DE0 /* ViewController.swift in Sources */,
 				FCA3F24B2375D022008F8DE0 /* AppDelegate.swift in Sources */,
 				FCC6A7F123796EC80047BD69 /* AddTaskViewController.swift in Sources */,
+				FC03394A23818A2600C46029 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
